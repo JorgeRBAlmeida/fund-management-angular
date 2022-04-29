@@ -1,4 +1,3 @@
-import { SharedModule } from './../shared/shared.module';
 import { FundosComponent } from './fundos.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -10,8 +9,7 @@ import { CommonModule } from '@angular/common';
     FundosComponent,
   ],
   imports: [
-    CommonModule,
-    SharedModule,
+    CommonModule
   ],
   exports: [
     FundosComponent

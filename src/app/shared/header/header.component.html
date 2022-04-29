@@ -1,5 +1,21 @@
 <mat-toolbar color="primary" class="header mat-elevation-z0">
   <div class="logodtvm">&nbsp;</div>
   <div class="titulo">{{ titulo | uppercase }}</div>
-  <ng-content class="menu"></ng-content>
+  <div class="user">
+    <div class="user__visible">
+      <div class="user__visible__text">
+        <span class="user__visible__text--id">F3525877</span>
+        <span class="user__visible__text--name">Frederico</span>
+      </div>
+      <div class="user__visible__icon">
+        <mat-icon aria-hidden="false" aria-label="icone de usuário">person</mat-icon>
+      </div>
+    </div>
+    <div class="user__invisible">
+      <span class="user__invisible__text">Sair</span>
+      <div class="user__invisible__icon">
+        <mat-icon aria-hidden="false" aria-label="icone de usuário">logout</mat-icon>
+      </div>
+    </div>
+  </div>
 </mat-toolbar>
