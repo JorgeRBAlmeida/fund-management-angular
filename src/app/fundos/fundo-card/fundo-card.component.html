@@ -1,0 +1,33 @@
+<div class="card">
+  <div [ngClass]="{'card__status--std' : status == 'check',
+                  'card__status--alert' : status == 'priority_high',
+                  'card__status--warn' : status == 'clear'}">
+  &nbsp;</div>
+  <h3 class="card__title">4912 BB TOP RF Credito Privado</h3>
+  <button mat-icon-button
+          matTooltip="Remover Fundo"
+          matTooltipPosition="above"
+          aria-label="Botão para excluir card" class="card__icon-del">
+    <mat-icon class="icon--delete">delete</mat-icon>
+  </button>
+  <div class="card__divider">&nbsp;</div>
+
+  <div class="card__body">
+    <div class="item--1">Ativos exterior</div>
+    <div class="item--2">Hedge</div>
+    <div class="item--3">Prazo médio</div>
+    <div class="item--4">PL do fundo</div>
+    <div class="item--5">Limite mínimo</div>
+
+    <div class="value--1">20.05%</div>
+    <div class="value--2">95.01%</div>
+    <div class="value--3">0.00</div>
+    <div class="value--4">569.635.675,57</div>
+    <div class="value--5">635.675,57</div>
+  </div>
+  <div [ngClass]="{'card__status--std--icon--std' : status == 'check',
+                  'card__status--alert--icon--alert' : status == 'priority_high',
+                  'card__status--warn--icon--warn' : status == 'clear'}">
+    <mat-icon>{{ status }}</mat-icon>
+  </div>
+</div>

@@ -27,7 +27,6 @@
       display: flex;
       flex-direction: column;
       align-items: flex-end;
-      //background-color: #dd0000;
       margin: 1rem 0 1rem 0;
 
       & > * {
@@ -36,14 +35,12 @@
 
       &--id {
         font-size: 1rem;
-        //background-color: #ad0606;
       }
 
       &--name {
         display: inline-block;
         font-size: 0.7rem;
         font-weight: 300;
-        //background-color: #870404;
       }
     }
 
@@ -65,7 +62,6 @@
     &__text {
       display: flex;
       align-items: center;
-      //background-color: #dd0000;
       margin: 0 2rem 0 0;
       line-height: 100%;
       font-size: 1.3rem;

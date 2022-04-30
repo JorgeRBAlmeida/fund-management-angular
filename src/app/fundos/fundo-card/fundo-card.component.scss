@@ -1,0 +1,128 @@
+$base-color: #465eff;
+$standard-color:#56cb95;
+$alert-color: #e3c52f;
+$warning-color: #b82e2e;
+
+.card {
+  display: grid;
+  background-color: #fff;
+  border-radius: 0.25rem;
+  box-shadow: 2px 2px 4px rgba($color: #000000, $alpha: 0.2);
+  height: 14rem;
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+  transition: all .2s;
+
+  grid-template-areas:
+    "a ti ti"
+    "a di di"
+    "a b0 b0"
+    "a b0 b0"
+    "a b0 b0"
+    "a b0 b0"
+    "a b0 b0";
+
+  grid-template-columns: 4px 1fr 1fr;
+  grid-template-rows: auto 1px repeat(5, 1fr);
+
+  &__body {
+    display: grid;
+    padding: 1.5rem;
+    grid-area: b0;
+    grid-template-areas:
+    "i1 v1"
+    "i2 v2"
+    "i3 v3"
+    "i4 v4"
+    "i5 v5";
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+
+    @for $i from 1 through 5 {
+      .item--#{$i} {
+        grid-area: i#{$i};
+        margin-left: 2rem;
+      }
+    }
+
+    @for $j from 1 through 5 {
+      .value--#{$j} {
+        grid-area: v#{$j};
+        margin-left: 2.5rem;
+        font-weight: 500;
+      }
+    }
+  }
+
+  &:hover {
+    //border: 2px solid #707070;
+    transform: translate(-2px, -2px);
+    box-shadow: 4px 4px 16px rgba($color: #000000, $alpha: 0.15);
+    color: $base-color;
+  }
+
+  &__status--std {
+    grid-area: a;
+    background-color: $standard-color;
+
+    &--icon--std {
+      position: absolute;
+      top: 47%;
+      background-color: $standard-color;
+      color: #fff;
+      border-radius: 0 50% 50% 0;
+      padding: 0.3rem 0.3rem 0 0.2rem;
+    }
+  }
+
+  &__status--alert {
+    grid-area: a;
+    background-color: $alert-color;
+
+    &--icon--alert {
+      position: absolute;
+      top: 47%;
+      background-color: $alert-color;
+      color: #fff;
+      border-radius: 0 50% 50% 0;
+      padding: 0.3rem 0.3rem 0 0.2rem;
+    }
+  }
+
+  &__status--warn {
+    grid-area: a;
+    background-color: $warning-color;
+
+    &--icon--warn {
+      position: absolute;
+      top: 47%;
+      background-color: $warning-color;
+      color: #fff;
+      border-radius: 0 50% 50% 0;
+      padding: 0.3rem 0.3rem 0 0.2rem;
+    }
+  }
+
+  &__title {
+    grid-area: ti;
+    font-weight: 700;
+    margin: 0.5rem 0 0 0.5rem;
+  }
+  &__icon-del {
+    grid-area: ti;
+    margin-left: auto;
+  }
+
+  &__icon-del:hover {
+    color: #000000;
+  }
+
+  &__divider {
+    grid-area: di;
+    background-color: #d1d1d1;
+    margin: 0 1rem 0 1rem;
+  }
+}
+
+
