@@ -1,0 +1,21 @@
+<div class="detalhe">
+  <div class="detalhe__top" #stickyMenu [class.sticky]="sticky">
+    <a class="detalhe__top--icon" [routerLink]="''">
+      <mat-icon aria-label="voltar para página anterior">arrow_back</mat-icon>
+    </a>
+    <h1 class="detalhe__top--title">4912 BB TOP RF Credito Privado</h1>
+  </div>
+
+  <div class="detalhe__tab" [class.mt-extra]="sticky">
+    <mat-tab-group mat-align-tabs="center">
+      <mat-tab label="Dashboard">
+        <ng-template matTabContent>
+          <app-tab-dashboard></app-tab-dashboard>
+        </ng-template>
+      </mat-tab>
+      <mat-tab label="Previa GFI"></mat-tab>
+      <mat-tab label="Fluxo de Caixa"></mat-tab>
+    </mat-tab-group>
+  </div>
+
+</div>

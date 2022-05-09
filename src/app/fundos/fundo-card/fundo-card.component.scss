@@ -1,9 +1,9 @@
 $base-color: #465eff;
-$standard-color:#56cb95;
+$standard-color: #56cb95;
 $alert-color: #e3c52f;
 $warning-color: #b82e2e;
 
-.card {
+.fundo {
   display: grid;
   background-color: #fff;
   border-radius: 0.25rem;
@@ -12,7 +12,7 @@ $warning-color: #b82e2e;
   overflow: hidden;
   cursor: pointer;
   position: relative;
-  transition: all .2s;
+  transition: all 0.2s;
 
   grid-template-areas:
     "a ti ti"
@@ -31,18 +31,18 @@ $warning-color: #b82e2e;
     padding: 1.5rem;
     grid-area: b0;
     grid-template-areas:
-    "i1 v1"
-    "i2 v2"
-    "i3 v3"
-    "i4 v4"
-    "i5 v5";
+      "i1 v1"
+      "i2 v2"
+      "i3 v3"
+      "i4 v4"
+      "i5 v5";
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(5, 1fr);
 
     @for $i from 1 through 5 {
       .item--#{$i} {
         grid-area: i#{$i};
-        margin-left: 2rem;
+        margin-left: 2.5rem;
       }
     }
 
@@ -56,10 +56,9 @@ $warning-color: #b82e2e;
   }
 
   &:hover {
-    //border: 2px solid #707070;
     transform: translate(-2px, -2px);
     box-shadow: 4px 4px 16px rgba($color: #000000, $alpha: 0.15);
-    color: $base-color;
+    //color: $base-color;
   }
 
   &__status--std {
@@ -124,5 +123,3 @@ $warning-color: #b82e2e;
     margin: 0 1rem 0 1rem;
   }
 }
-
-

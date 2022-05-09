@@ -1,3 +1,4 @@
+import { Fundo } from 'src/app/shared/model/fundo.model';
 import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
@@ -7,7 +8,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class FundoCardComponent implements OnInit {
 
-  @Input() status: 'check' | 'priority_high' | 'clear' = 'check';
+  @Input() fundo!: Fundo;
   constructor() { }
 
   ngOnInit(): void {

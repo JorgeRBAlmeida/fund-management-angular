@@ -1,23 +1,20 @@
 <h1 class="title">Fundo Atuais</h1>
 <section class="fundos">
-
-    <app-fundo-card status="clear"></app-fundo-card>
-    <app-fundo-card status="clear"></app-fundo-card>
-    <app-fundo-card status="priority_high"></app-fundo-card>
-    <app-fundo-card status="priority_high"></app-fundo-card>
-    <app-fundo-card status="priority_high"></app-fundo-card>
-    <app-fundo-card status="check"></app-fundo-card>
-    <app-fundo-card status="check"></app-fundo-card>
-    <app-fundo-card status="check"></app-fundo-card>
-    <app-fundo-card status="check"></app-fundo-card>
-    <app-fundo-card status="check"></app-fundo-card>
+  <a *ngFor="let fundo of fundos" [routerLink]="['/fundo', fundo.codigoDrive]">
+    <app-fundo-card [fundo]="fundo"></app-fundo-card>
+  </a>
 
   <div class="card card__add">
     <h2>Adicionar novo fundo</h2>
     <mat-form-field appearance="outline">
       <mat-label>Código Drive</mat-label>
-      <input matInput>
-      <button matSuffix class="btn__input" color="primary" aria-label="Botão para adicionar um novo fundo">
+      <input matInput />
+      <button
+        matSuffix
+        class="btn__input"
+        color="primary"
+        aria-label="Botão para adicionar um novo fundo"
+      >
         <mat-icon>add</mat-icon>
       </button>
     </mat-form-field>
