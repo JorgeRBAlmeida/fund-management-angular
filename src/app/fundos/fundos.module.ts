@@ -1,3 +1,4 @@
+import { NgChartsModule } from 'ng2-charts';
 import { MatTabsModule } from '@angular/material/tabs';
 import { FundoDetalheComponent } from './fundo-detalhe/fundo-detalhe.component';
 import { FundosRoutingModule } from './fundos-routing.module';
@@ -37,7 +38,8 @@ import { TabFluxoDeCaixaComponent } from './fundo-detalhe/tab-fluxo-de-caixa/tab
     MatToolbarModule,
     MatTooltipModule,
     FundosRoutingModule,
-    MatTabsModule
+    MatTabsModule,
+    NgChartsModule
   ]
 })
 export class FundosModule { }

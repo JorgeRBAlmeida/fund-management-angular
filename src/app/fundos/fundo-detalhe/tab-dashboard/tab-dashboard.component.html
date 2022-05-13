@@ -10,13 +10,25 @@
       <div>Mês</div>
       <div>Ano</div>
       <div>Fundo:</div>
-      <div class="data">-0,18%</div>
-      <div class="data">-1,25%</div>
-      <div class="data">-1,25%</div>
+      <div class="data">
+        <mat-icon class="icon--down">arrow_downward</mat-icon> -0,18%
+      </div>
+      <div class="data">
+        <mat-icon class="icon--up">arrow_upward</mat-icon>1,54%
+      </div>
+      <div class="data">
+        <mat-icon class="icon--down">arrow_downward</mat-icon>-1,25%
+      </div>
       <div>Benchmark:</div>
-      <div class="data">1,39%</div>
-      <div class="data">-0,07%</div>
-      <div class="data">-2,01%</div>
+      <div class="data">
+        <mat-icon class="icon--up">arrow_upward</mat-icon>1,39%
+      </div>
+      <div class="data">
+        <mat-icon class="icon--up">arrow_upward</mat-icon>-0,07%
+      </div>
+      <div class="data">
+        <mat-icon class="icon--down">arrow_downward</mat-icon>-2,01%
+      </div>
     </div>
   </div>
   <div class="card--2">
@@ -55,25 +67,62 @@
   </div>
   <div class="card--4">
     <h3 class="card__title">Patrimônio Líquido</h3>
+    <div class="card--4--body">
+      <div style="display: block; height:10rem; width:10rem">
+        <canvas baseChart [data]="doughnutChartData" [type]="doughnutChartType" [options]="chartOptions">
+        </canvas>
+      </div>
+      <span class="card--4--body--total">Total</span>
+      <span class="card--4--body--value">R$ 569.635.675,57</span>
+      <div class="card--4--body--labels">
+        <div class="card--4--body--labels--brasil">
+          <div>Brasil</div>
+          <div>R$ 409.846.979</div>
+        </div>
+        <div class="card--4--body--labels--exterior">
+          <div>Exterior</div>
+          <div>R$ 159.788.798</div>
+        </div>
+      </div>
+    </div>
   </div>
   <div class="card--5">
     <h3 class="card__title">Hedge cambial (porcentagem)</h3>
+    <div class="card--5--body">
+      <div class="card--5--body--data">
+        <div>
+          <div>Meta: _</div>
+          <div>Atual: _</div>
+          <div>Limite: _</div>
+        </div>
+        <div>gráfico</div>
+      </div>
+      <div class="card--5--body--send">
+        <div>Necessidade:</div>
+        <div>__</div>
+        <button mat-button class="btn__send">
+          Enviar ordens
+          <mat-icon color="primary" class="btn__send--icon">arrow_forward</mat-icon>
+        </button>
+      </div>
+    </div>
+
   </div>
   <div class="card--6">
     <div class="card__title">
       <h3 class="card__title--text">Carteira Brasil</h3>
-      <button class="btn__send">
+      <button mat-button class="btn__send">
         Enviar ordens
-        <mat-icon color="primary">arrow_foward</mat-icon>
+        <mat-icon color="primary" class="btn__send--icon">arrow_forward</mat-icon>
       </button>
     </div>
   </div>
   <div class="card--7">
     <div class="card__title">
       <h3 class="card__title--text">Carteira Exterior</h3>
-      <button class="btn__send">
+      <button mat-button class="btn__send">
         Enviar ordens
-        <mat-icon color="primary">arrow_foward</mat-icon>
+        <mat-icon color="primary" class="btn__send--icon">arrow_forward</mat-icon>
       </button>
     </div>
   </div>

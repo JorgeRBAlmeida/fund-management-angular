@@ -9,7 +9,7 @@ $warning-color: #b82e2e;
   overflow: hidden;
   grid-template-areas:
     "rent rent rent mov mov mov"
-    "pl pl dados dados hedge hedge"
+    "pl dados hedge hedge hedge hedge"
     "cbr  cbr  cbr  cbr cbr cbr"
     "cex  cex  cex  cex cex cex";
   grid-template-columns: repeat(auto-fit, min-max(10rem, 1fr));
@@ -30,12 +30,12 @@ $warning-color: #b82e2e;
     &--text {
       font-weight: 500;
       display: inline-block;
-      margin-right: auto;
+      margin: 0.5rem auto 0.5rem 0;
     }
 
     &--icon {
       color: #c5c5c5;
-      margin-top: 0.2rem;
+      margin-top: 0.5rem;
     }
   }
 
@@ -46,12 +46,14 @@ $warning-color: #b82e2e;
       display: grid;
       gap: 1rem;
       margin: 1rem;
+      justify-content: center;
 
       grid-template-rows: repeat(3, 1fr);
       grid-template-columns: repeat(4, 1fr);
 
       & .data {
         font-weight: 700;
+        justify-content: center;
       }
     }
   }
@@ -93,13 +95,64 @@ $warning-color: #b82e2e;
       }
 
       & .data {
-        font-weight: 700;
+        font-weight: 500;
       }
     }
   }
 
   &--4 {
     grid-area: pl;
+    display: flex;
+    flex-direction: column;
+
+    &--body {
+      align-self: center;
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      align-items: center;
+
+      &--total {
+        margin: 0.5rem 0 0 0;
+        font-size: 1.2rem;
+      }
+
+      &--value {
+        margin: 0.5rem;
+        font-weight: 700;
+        font-size: 1.2rem;
+      }
+
+      &--labels {
+        display: flex;
+        width: 100%;
+        padding: 0 1rem;
+
+        &>* {
+          padding-left: 0.5rem;
+          font-weight: 700;
+          font-size: 0.8rem;
+        }
+
+        &--brasil {
+          border-left: 0.4rem solid rgb(251, 251, 56);
+          margin-right: auto;
+
+          & :first-child {
+            font-weight: 500;
+          }
+        }
+
+        &--exterior {
+          border-left: 0.4rem solid rgb(70, 94, 255);
+
+          & :first-child {
+            font-weight: 500;
+          }
+        }
+
+      }
+    }
   }
 
   &--5 {
@@ -117,4 +170,44 @@ $warning-color: #b82e2e;
 
 #bg--blue {
   background-color: $base-color;
+}
+
+.btn__send {
+  background-color: #fff;
+  border: 1px solid $base-color;
+  border-radius: 0.25rem;
+  display: flex;
+  align-items: center;
+  padding: 0 1rem;
+  color: $base-color;
+  cursor: pointer;
+  transition: all .2s;
+
+  &:hover {
+    background-color: #e9ecff;
+  }
+
+  &--icon {
+    padding-left: 0.5rem;
+  }
+}
+
+.icon--up {
+  color: rgb(3, 173, 94);
+  background-color: rgba(66, 255, 167, 0.25);
+  border-radius: 50%;
+  font-size: 1rem;
+  width: 1rem;
+  height: 1rem;
+  margin-right: 0.4rem;
+}
+
+.icon--down {
+  color: $warning-color;
+  background-color: rgba(255, 55, 55, 0.25);
+  border-radius: 50%;
+  font-size: 1rem;
+  width: 1rem;
+  height: 1rem;
+  margin-right: 0.4rem;
 }
