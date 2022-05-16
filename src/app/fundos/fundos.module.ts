@@ -16,6 +16,7 @@ import { FundoNaoEncontradoComponent } from './fundo-nao-encontrado/fundo-nao-en
 import { TabDashboardComponent } from './fundo-detalhe/tab-dashboard/tab-dashboard.component';
 import { TabPreviaGfiComponent } from './fundo-detalhe/tab-previa-gfi/tab-previa-gfi.component';
 import { TabFluxoDeCaixaComponent } from './fundo-detalhe/tab-fluxo-de-caixa/tab-fluxo-de-caixa.component';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -39,7 +40,8 @@ import { TabFluxoDeCaixaComponent } from './fundo-detalhe/tab-fluxo-de-caixa/tab
     MatTooltipModule,
     FundosRoutingModule,
     MatTabsModule,
-    NgChartsModule
+    NgChartsModule,
+    FormsModule
   ]
 })
 export class FundosModule { }

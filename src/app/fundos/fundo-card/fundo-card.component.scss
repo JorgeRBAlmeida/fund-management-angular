@@ -2,6 +2,7 @@ $base-color: #465eff;
 $standard-color: #56cb95;
 $alert-color: #e3c52f;
 $warning-color: #b82e2e;
+$gray-color: #a1a1a1;
 
 .fundo {
   display: grid;
@@ -103,11 +104,17 @@ $warning-color: #b82e2e;
     }
   }
 
+  &__status--unset {
+    grid-area: a;
+    background-color: $gray-color;
+  }
+
   &__title {
     grid-area: ti;
     font-weight: 700;
     margin: 0.5rem 0 0 0.5rem;
   }
+
   &__icon-del {
     grid-area: ti;
     margin-left: auto;

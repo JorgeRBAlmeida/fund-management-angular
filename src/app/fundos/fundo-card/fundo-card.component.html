@@ -1,30 +1,22 @@
-<div class="fundo">
-  <div
-    [ngClass]="{
+<div class="fundo" [routerLink]="['/fundo', fundo.codigoDrive]">
+  <div [ngClass]="{
       'fundo__status--std': fundo.status == 'check',
       'fundo__status--alert': fundo.status == 'priority_high',
-      'fundo__status--warn': fundo.status == 'clear'
-    }"
-  >
+      'fundo__status--warn': fundo.status == 'clear',
+      'fundo__status--unset': fundo.status == ''
+    }">
     &nbsp;
   </div>
-  <div
-    [ngClass]="{
+  <div *ngIf="fundo.status" [ngClass]="{
       'fundo__status--std--icon--std': fundo.status == 'check',
       'fundo__status--alert--icon--alert': fundo.status == 'priority_high',
       'fundo__status--warn--icon--warn': fundo.status == 'clear'
-    }"
-  >
+    }">
     <mat-icon>{{ fundo.status }}</mat-icon>
   </div>
   <h3 class="fundo__title">{{ fundo.nome }}</h3>
-  <button
-    mat-icon-button
-    matTooltip="Remover Fundo"
-    matTooltipPosition="above"
-    aria-label="Botão para excluir fundo"
-    class="fundo__icon-del"
-  >
+  <button mat-icon-button matTooltip="Remover Fundo" matTooltipPosition="above" aria-label="Botão para excluir fundo"
+    class="fundo__icon-del" (click)="removeFundo(fundo.codigoDrive)">
     <mat-icon class="icon--delete">delete</mat-icon>
   </button>
   <div class="fundo__divider">&nbsp;</div>
@@ -35,10 +27,10 @@
     <div class="item--2">Hedge</div>
     <div class="value--2">{{ fundo.hedge }}%</div>
     <div class="item--3">Prazo médio</div>
-    <div class="value--3">{{ fundo.prazoMedio }}%</div>
+    <div class="value--3">{{ fundo.prazoMedio }}</div>
     <div class="item--4">PL do fundo</div>
-    <div class="value--4">{{ fundo.plFundo }}%</div>
+    <div class="value--4">{{ fundo.plFundo | currency: 'BRL' : true }}</div>
     <div class="item--5">Limite mínimo</div>
-    <div class="value--5">{{ fundo.limiteFundo }}%</div>
+    <div class="value--5">{{ fundo.limiteFundo | currency: 'BRL' : true }}</div>
   </div>
 </div>

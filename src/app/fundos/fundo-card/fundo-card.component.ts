@@ -1,3 +1,4 @@
+import { FundosService } from './../fundos.service';
 import { Fundo } from 'src/app/shared/model/fundo.model';
 import { Component, Input, OnInit } from '@angular/core';
 
@@ -9,9 +10,13 @@ import { Component, Input, OnInit } from '@angular/core';
 export class FundoCardComponent implements OnInit {
 
   @Input() fundo!: Fundo;
-  constructor() { }
+  constructor(private fundosService: FundosService) { }
 
   ngOnInit(): void {
+  }
+
+  removeFundo(codigoDrive: number) {
+    this.fundosService.removeFundo(codigoDrive);
   }
 
 }
