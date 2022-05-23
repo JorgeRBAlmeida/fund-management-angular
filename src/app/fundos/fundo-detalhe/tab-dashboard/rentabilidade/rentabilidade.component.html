@@ -1,0 +1,50 @@
+<div class="card__rent">
+  <div class="card__rent__title">
+    <h3 class="card__rent__title--text">Rentabilidade</h3>
+    <mat-icon class="card__rent__title--icon">show_chart</mat-icon>
+  </div>
+  <div class="card__rent__table">
+    <div>&nbsp;</div>
+    <div>Dia</div>
+    <div>Mês</div>
+    <div>Ano</div>
+    <div>Fundo:</div>
+    <div class="data">
+      <mat-icon class="icon--{{downOrUp(rentabilidadeFundo.dia)}}">
+        arrow_{{downOrUp(rentabilidadeFundo.dia)}}
+      </mat-icon>
+      {{ rentabilidadeFundo.dia | number: '1.0-2' }}%
+    </div>
+    <div class="data">
+      <mat-icon class="icon--{{downOrUp(rentabilidadeFundo.mes)}}">
+        arrow_{{downOrUp(rentabilidadeFundo.mes)}}
+      </mat-icon>
+      {{ rentabilidadeFundo.mes | number: '1.0-2' }}%
+    </div>
+    <div class="data">
+      <mat-icon class="icon--{{downOrUp(rentabilidadeFundo.ano)}}">
+        arrow_{{downOrUp(rentabilidadeFundo.ano)}}
+      </mat-icon>
+      {{ rentabilidadeFundo.ano | number: '1.0-2' }}%
+    </div>
+    <div>Benchmark:</div>
+    <div class="data">
+      <mat-icon class="icon--{{downOrUp(rentabilidadeBench.dia)}}">
+        arrow_{{downOrUp(rentabilidadeBench.dia)}}
+      </mat-icon>
+      {{ rentabilidadeBench.dia | number: '1.0-2' }}%
+    </div>
+    <div class="data">
+      <mat-icon class="icon--{{downOrUp(rentabilidadeBench.mes)}}">
+        arrow_{{downOrUp(rentabilidadeBench.mes)}}
+      </mat-icon>
+      {{ rentabilidadeBench.mes | number: '1.0-2' }}%
+    </div>
+    <div class="data">
+      <mat-icon class="icon--{{downOrUp(rentabilidadeBench.ano)}}">
+        arrow_{{downOrUp(rentabilidadeBench.ano)}}
+      </mat-icon>
+      {{ rentabilidadeBench.ano | number: '1.0-2' }}%
+    </div>
+  </div>
+</div>

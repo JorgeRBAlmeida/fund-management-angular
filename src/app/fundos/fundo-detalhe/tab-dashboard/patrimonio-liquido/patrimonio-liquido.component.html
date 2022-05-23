@@ -1,0 +1,27 @@
+<div class="card__pl">
+
+  <h3 class="card__pl__title">Patrimônio Líquido</h3>
+
+  <div class="card__pl__body">
+
+    <div style="display: block; height:10rem; width:10rem">
+      <canvas baseChart [data]="doughnutChartData" [type]="doughnutChartType" [options]="chartOptions">
+      </canvas>
+    </div>
+
+    <span class="card__pl__body--total">Total</span>
+    <span class="card__pl__body--value">R$ 569.635.675,57</span>
+
+    <div class="card__pl__body--labels">
+      <div class="card__pl__body--labels--brasil">
+        <div>Brasil</div>
+        <div>R$ 409.846.979</div>
+      </div>
+      <div class="card__pl__body--labels--exterior">
+        <div>Exterior</div>
+        <div>R$ 159.788.798</div>
+      </div>
+    </div>
+  </div>
+
+</div>

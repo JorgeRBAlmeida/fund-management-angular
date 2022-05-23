@@ -1,3 +1,4 @@
+import { MatCheckboxModule } from '@angular/material/checkbox';
 import { NgChartsModule } from 'ng2-charts';
 import { MatTabsModule } from '@angular/material/tabs';
 import { FundoDetalheComponent } from './fundo-detalhe/fundo-detalhe.component';
@@ -17,6 +18,13 @@ import { TabDashboardComponent } from './fundo-detalhe/tab-dashboard/tab-dashboa
 import { TabPreviaGfiComponent } from './fundo-detalhe/tab-previa-gfi/tab-previa-gfi.component';
 import { TabFluxoDeCaixaComponent } from './fundo-detalhe/tab-fluxo-de-caixa/tab-fluxo-de-caixa.component';
 import { FormsModule } from '@angular/forms';
+import { RentabilidadeComponent } from './fundo-detalhe/tab-dashboard/rentabilidade/rentabilidade.component';
+import { MovimentacoesComponent } from './fundo-detalhe/tab-dashboard/movimentacoes/movimentacoes.component';
+import { DadosCadastraisComponent } from './fundo-detalhe/tab-dashboard/dados-cadastrais/dados-cadastrais.component';
+import { PatrimonioLiquidoComponent } from './fundo-detalhe/tab-dashboard/patrimonio-liquido/patrimonio-liquido.component';
+import { HedgeCambialComponent } from './fundo-detalhe/tab-dashboard/hedge-cambial/hedge-cambial.component';
+import { CarteiraBrasilComponent } from './fundo-detalhe/tab-dashboard/carteira-brasil/carteira-brasil.component';
+import { CarteiraExteriorComponent } from './fundo-detalhe/tab-dashboard/carteira-exterior/carteira-exterior.component';
 
 
 
@@ -28,7 +36,14 @@ import { FormsModule } from '@angular/forms';
     FundoNaoEncontradoComponent,
     TabDashboardComponent,
     TabPreviaGfiComponent,
-    TabFluxoDeCaixaComponent
+    TabFluxoDeCaixaComponent,
+    RentabilidadeComponent,
+    MovimentacoesComponent,
+    DadosCadastraisComponent,
+    PatrimonioLiquidoComponent,
+    HedgeCambialComponent,
+    CarteiraBrasilComponent,
+    CarteiraExteriorComponent
   ],
   imports: [
     CommonModule,
@@ -41,7 +56,8 @@ import { FormsModule } from '@angular/forms';
     FundosRoutingModule,
     MatTabsModule,
     NgChartsModule,
-    FormsModule
+    FormsModule,
+    MatCheckboxModule
   ]
 })
 export class FundosModule { }

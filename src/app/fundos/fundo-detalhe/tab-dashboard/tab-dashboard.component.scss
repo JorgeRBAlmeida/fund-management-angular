@@ -17,10 +17,10 @@ $warning-color: #b82e2e;
   gap: 2rem;
 
   &>* {
-    background-color: #fff;
+    /* background-color: #fff;
     border-radius: 0.25rem;
     box-shadow: 2px 2px 4px rgba($color: #000000, $alpha: 0.2);
-    padding: 1rem;
+    padding: 1rem; */
   }
 
   &__title {
@@ -42,7 +42,7 @@ $warning-color: #b82e2e;
   &--1 {
     grid-area: rent;
 
-    &--table {
+    /* &--table {
       display: grid;
       gap: 1rem;
       margin: 1rem;
@@ -55,7 +55,7 @@ $warning-color: #b82e2e;
         font-weight: 700;
         justify-content: center;
       }
-    }
+    } */
   }
 
   &--2 {
@@ -102,7 +102,7 @@ $warning-color: #b82e2e;
 
   &--4 {
     grid-area: pl;
-    display: flex;
+    /* display: flex;
     flex-direction: column;
 
     &--body {
@@ -152,7 +152,7 @@ $warning-color: #b82e2e;
         }
 
       }
-    }
+    } */
   }
 
   &--5 {

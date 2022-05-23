@@ -1,35 +1,6 @@
 <div class="card">
   <div class="card--1">
-    <div class="card__title">
-      <h3 class="card__title--text">Rentabilidade</h3>
-      <mat-icon class="card__title--icon">show_chart</mat-icon>
-    </div>
-    <div class="card--1--table">
-      <div>&nbsp;</div>
-      <div>Dia</div>
-      <div>Mês</div>
-      <div>Ano</div>
-      <div>Fundo:</div>
-      <div class="data">
-        <mat-icon class="icon--down">arrow_downward</mat-icon> -0,18%
-      </div>
-      <div class="data">
-        <mat-icon class="icon--up">arrow_upward</mat-icon>1,54%
-      </div>
-      <div class="data">
-        <mat-icon class="icon--down">arrow_downward</mat-icon>-1,25%
-      </div>
-      <div>Benchmark:</div>
-      <div class="data">
-        <mat-icon class="icon--up">arrow_upward</mat-icon>1,39%
-      </div>
-      <div class="data">
-        <mat-icon class="icon--up">arrow_upward</mat-icon>-0,07%
-      </div>
-      <div class="data">
-        <mat-icon class="icon--down">arrow_downward</mat-icon>-2,01%
-      </div>
-    </div>
+    <app-rentabilidade-card></app-rentabilidade-card>
   </div>
   <div class="card--2">
     <div class="card__title">
@@ -66,25 +37,7 @@
     </div>
   </div>
   <div class="card--4">
-    <h3 class="card__title">Patrimônio Líquido</h3>
-    <div class="card--4--body">
-      <div style="display: block; height:10rem; width:10rem">
-        <canvas baseChart [data]="doughnutChartData" [type]="doughnutChartType" [options]="chartOptions">
-        </canvas>
-      </div>
-      <span class="card--4--body--total">Total</span>
-      <span class="card--4--body--value">R$ 569.635.675,57</span>
-      <div class="card--4--body--labels">
-        <div class="card--4--body--labels--brasil">
-          <div>Brasil</div>
-          <div>R$ 409.846.979</div>
-        </div>
-        <div class="card--4--body--labels--exterior">
-          <div>Exterior</div>
-          <div>R$ 159.788.798</div>
-        </div>
-      </div>
-    </div>
+    <app-patrimonio-liquido-card></app-patrimonio-liquido-card>
   </div>
   <div class="card--5">
     <h3 class="card__title">Hedge cambial (porcentagem)</h3>
@@ -125,5 +78,70 @@
         <mat-icon color="primary" class="btn__send--icon">arrow_forward</mat-icon>
       </button>
     </div>
+    <!-- <table mat-table matTableFilter matTableExporter matSort [dataSource]="listFundosEx" class="mat-elevation-z0"
+      aria-label="tabela carteira exterior">
+
+      <ng-container matColumnDef="ativos">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header scope="col"> Ativos </th>
+        <td mat-cell *matCellDef="let carteiraEx" class="column-data"> {{ carteiraEx.ativos | date : 'dd-MM-yyyy' }}
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="vlMercado">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header scope="col"> Valor de mercado </th>
+        <td mat-cell *matCellDef="let carteiraEx" class="column-origem"> {{ carteiraEx.vlMercado }} </td>
+
+      </ng-container>
+
+      <ng-container matColumnDef="quantidade">
+        <th mat-header-cell *matHeaderCellDef scope="col"> Quantidade </th>
+        <td mat-cell *matCellDef="let carteiraEx"> {{ carteiraEx.quantidade }}</td>
+        <td mat-footer-cell *matFooterCellDef class="no-data"> Nenhum alerta para exibir. </td>
+      </ng-container>
+
+      <ng-container matColumnDef="puMercado">
+        <th mat-header-cell *matHeaderCellDef scope="col"> PU Mercado </th>
+        <td mat-cell *matCellDef="let carteiraEx"> {{ carteiraEx.puMercado }} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="plAtual">
+        <th mat-header-cell *matHeaderCellDef scope="col"> %PL Atual </th>
+        <td mat-cell *matCellDef="let carteiraEx"> {{ carteiraEx.plAtual }} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="plIdeal">
+        <th mat-header-cell *matHeaderCellDef scope="col"> %PL Ideal </th>
+        <td mat-cell *matCellDef="let carteiraEx"> {{ carteiraEx.plIdeal }} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="limite">
+        <th mat-header-cell *matHeaderCellDef scope="col"> Limite </th>
+        <td mat-cell *matCellDef="let carteiraEx"> {{ carteiraEx.limite }} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="necessidade">
+        <th mat-header-cell *matHeaderCellDef scope="col"> Necessidade</th>
+        <td mat-cell *matCellDef="let carteiraEx"> {{ carteiraEx.necessidade }} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="selecionar">
+        <th mat-header-cell *matHeaderCellDef style="width: 40px;">
+          <!-- <mat-checkbox (change)="$event ? masterToggle() : null" [checked]="selection.hasValue() && isAllSelected()"
+            [indeterminate]="selection.hasValue() && !isAllSelected()" [aria-label]="checkboxLabel()">
+          </mat-checkbox> -->
+    <!-- </th>
+    <td mat-cell *matCellDef="let row" style="width: 50px; padding-right: 5px;"> -->
+    <!-- <mat-checkbox (click)="$event.stopPropagation()" (change)="$event ? selection.toggle(row) : null"
+            [checked]="selection.isSelected(row)" [aria-label]="checkboxLabel(row)">
+          </mat-checkbox> -->
+    <!-- </td>
+    </ng-container>
+
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;">
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-footer-row *matFooterRowDef="['loading']" [ngClass]="{ 'hide' : listFundosEx?.data != null }"></tr>
+    <tr mat-footer-row *matFooterRowDef="['noData']" [ngClass]="{ 'hide' : listFundosEx?.filteredData?.length != 0 }">
+    </tr>
+    </table> -->
   </div>
 </div>
