@@ -1,3 +1,4 @@
+import { MatTableModule } from '@angular/material/table';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { NgChartsModule } from 'ng2-charts';
 import { MatTabsModule } from '@angular/material/tabs';
@@ -57,7 +58,8 @@ import { CarteiraExteriorComponent } from './fundo-detalhe/tab-dashboard/carteir
     MatTabsModule,
     NgChartsModule,
     FormsModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    MatTableModule
   ]
 })
 export class FundosModule { }

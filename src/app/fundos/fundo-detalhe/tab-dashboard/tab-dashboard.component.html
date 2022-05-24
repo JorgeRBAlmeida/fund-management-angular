@@ -2,146 +2,28 @@
   <div class="card--1">
     <app-rentabilidade-card></app-rentabilidade-card>
   </div>
-  <div class="card--2">
-    <div class="card__title">
-      <h3 class="card__title--text">Movimentações</h3>
-      <mat-icon class="card__title--icon">compare_arrows</mat-icon>
-    </div>
-    <div class="card--2--table">
-      <div>Aplicação:</div>
-      <div class="data">D+0 / D+1</div>
-      <div>Resgate:</div>
-      <div class="data">D+5 / D+1</div>
-    </div>
-  </div>
-  <div class="card--3" id="bg--blue">
-    <h3 class="card__title">Dados Cadastrais</h3>
 
-    <div class="card--3--table">
-      <div>Benchmark:</div>
-      <div class="data">110% CDI</div>
-      <div>Cód. Drive:</div>
-      <div class="data">4919</div>
-      <div>Cód. GFI:</div>
-      <div class="data">1136</div>
-      <div>Conta Corrente:</div>
-      <div class="data">607,004</div>
-      <div>Conta BB SEC:</div>
-      <div class="data">ATB 006068</div>
-      <div>Conta SELIC:</div>
-      <div class="data">(Não possui)</div>
-      <div>Conta CETIP:</div>
-      <div class="data">(Não possui)</div>
-      <div>Conta Allfunds:</div>
-      <div class="data">123456</div>
-    </div>
+  <div class="card--2">
+    <app-movimentacoes-card></app-movimentacoes-card>
   </div>
+
+  <div class="card--3">
+    <app-dados-cadastrais-card></app-dados-cadastrais-card>
+  </div>
+
   <div class="card--4">
     <app-patrimonio-liquido-card></app-patrimonio-liquido-card>
   </div>
+
   <div class="card--5">
-    <h3 class="card__title">Hedge cambial (porcentagem)</h3>
-    <div class="card--5--body">
-      <div class="card--5--body--data">
-        <div>
-          <div>Meta: _</div>
-          <div>Atual: _</div>
-          <div>Limite: _</div>
-        </div>
-        <div>gráfico</div>
-      </div>
-      <div class="card--5--body--send">
-        <div>Necessidade:</div>
-        <div>__</div>
-        <button mat-button class="btn__send">
-          Enviar ordens
-          <mat-icon color="primary" class="btn__send--icon">arrow_forward</mat-icon>
-        </button>
-      </div>
-    </div>
-
+    <app-hedge-cambial-card></app-hedge-cambial-card>
   </div>
+
   <div class="card--6">
-    <div class="card__title">
-      <h3 class="card__title--text">Carteira Brasil</h3>
-      <button mat-button class="btn__send">
-        Enviar ordens
-        <mat-icon color="primary" class="btn__send--icon">arrow_forward</mat-icon>
-      </button>
-    </div>
+    <app-carteira-brasil-card></app-carteira-brasil-card>
   </div>
+
   <div class="card--7">
-    <div class="card__title">
-      <h3 class="card__title--text">Carteira Exterior</h3>
-      <button mat-button class="btn__send">
-        Enviar ordens
-        <mat-icon color="primary" class="btn__send--icon">arrow_forward</mat-icon>
-      </button>
-    </div>
-    <!-- <table mat-table matTableFilter matTableExporter matSort [dataSource]="listFundosEx" class="mat-elevation-z0"
-      aria-label="tabela carteira exterior">
-
-      <ng-container matColumnDef="ativos">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header scope="col"> Ativos </th>
-        <td mat-cell *matCellDef="let carteiraEx" class="column-data"> {{ carteiraEx.ativos | date : 'dd-MM-yyyy' }}
-        </td>
-      </ng-container>
-
-      <ng-container matColumnDef="vlMercado">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header scope="col"> Valor de mercado </th>
-        <td mat-cell *matCellDef="let carteiraEx" class="column-origem"> {{ carteiraEx.vlMercado }} </td>
-
-      </ng-container>
-
-      <ng-container matColumnDef="quantidade">
-        <th mat-header-cell *matHeaderCellDef scope="col"> Quantidade </th>
-        <td mat-cell *matCellDef="let carteiraEx"> {{ carteiraEx.quantidade }}</td>
-        <td mat-footer-cell *matFooterCellDef class="no-data"> Nenhum alerta para exibir. </td>
-      </ng-container>
-
-      <ng-container matColumnDef="puMercado">
-        <th mat-header-cell *matHeaderCellDef scope="col"> PU Mercado </th>
-        <td mat-cell *matCellDef="let carteiraEx"> {{ carteiraEx.puMercado }} </td>
-      </ng-container>
-
-      <ng-container matColumnDef="plAtual">
-        <th mat-header-cell *matHeaderCellDef scope="col"> %PL Atual </th>
-        <td mat-cell *matCellDef="let carteiraEx"> {{ carteiraEx.plAtual }} </td>
-      </ng-container>
-
-      <ng-container matColumnDef="plIdeal">
-        <th mat-header-cell *matHeaderCellDef scope="col"> %PL Ideal </th>
-        <td mat-cell *matCellDef="let carteiraEx"> {{ carteiraEx.plIdeal }} </td>
-      </ng-container>
-
-      <ng-container matColumnDef="limite">
-        <th mat-header-cell *matHeaderCellDef scope="col"> Limite </th>
-        <td mat-cell *matCellDef="let carteiraEx"> {{ carteiraEx.limite }} </td>
-      </ng-container>
-
-      <ng-container matColumnDef="necessidade">
-        <th mat-header-cell *matHeaderCellDef scope="col"> Necessidade</th>
-        <td mat-cell *matCellDef="let carteiraEx"> {{ carteiraEx.necessidade }} </td>
-      </ng-container>
-
-      <ng-container matColumnDef="selecionar">
-        <th mat-header-cell *matHeaderCellDef style="width: 40px;">
-          <!-- <mat-checkbox (change)="$event ? masterToggle() : null" [checked]="selection.hasValue() && isAllSelected()"
-            [indeterminate]="selection.hasValue() && !isAllSelected()" [aria-label]="checkboxLabel()">
-          </mat-checkbox> -->
-    <!-- </th>
-    <td mat-cell *matCellDef="let row" style="width: 50px; padding-right: 5px;"> -->
-    <!-- <mat-checkbox (click)="$event.stopPropagation()" (change)="$event ? selection.toggle(row) : null"
-            [checked]="selection.isSelected(row)" [aria-label]="checkboxLabel(row)">
-          </mat-checkbox> -->
-    <!-- </td>
-    </ng-container>
-
-    <tr mat-row *matRowDef="let row; columns: displayedColumns;">
-    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-    <tr mat-footer-row *matFooterRowDef="['loading']" [ngClass]="{ 'hide' : listFundosEx?.data != null }"></tr>
-    <tr mat-footer-row *matFooterRowDef="['noData']" [ngClass]="{ 'hide' : listFundosEx?.filteredData?.length != 0 }">
-    </tr>
-    </table> -->
+    <app-carteira-exterior-card></app-carteira-exterior-card>
   </div>
 </div>

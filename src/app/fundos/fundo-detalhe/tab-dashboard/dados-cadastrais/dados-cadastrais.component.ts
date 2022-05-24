@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-dados-cadastrais',
+  selector: 'app-dados-cadastrais-card',
   templateUrl: './dados-cadastrais.component.html',
   styleUrls: ['./dados-cadastrais.component.scss']
 })

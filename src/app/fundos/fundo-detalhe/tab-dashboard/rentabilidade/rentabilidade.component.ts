@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 const rentFundo = {
-  dia: -0.18,
+  dia: 0,
   mes: 1.54,
   ano: 1.25
 }
@@ -27,7 +27,8 @@ export class RentabilidadeComponent implements OnInit {
   }
 
   downOrUp(rent: number): string {
-    if (rent >= 0) return ('upward');
-    else return ('downward');
+    if (rent > 0) return ('upward');
+    else if (rent < 0) return ('downward');
+    return ('');
   }
 }

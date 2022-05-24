@@ -1,1 +1,83 @@
-<p>carteira-brasil works!</p>
+<div class="card__carteirabr">
+  <div class="card__carteirabr__title">
+    <h3 class="card__carteirabr__title--text">Carteira Brasil</h3>
+    <button mat-button class="btn__send">
+      Enviar ordens
+      <mat-icon color="primary" class="btn__send--icon">arrow_forward</mat-icon>
+    </button>
+  </div>
+  <table mat-table [dataSource]="dataSource" class="card__carteirabr__table mat-elevation-z0">
+
+    <!-- ativos Column -->
+    <ng-container matColumnDef="ativos">
+      <th mat-header-cell *matHeaderCellDef> Ativos </th>
+      <td mat-cell *matCellDef="let fundo"> {{fundo.nome}} </td>
+    </ng-container>
+
+    <!-- valorMercado Column -->
+    <ng-container matColumnDef="valorMercado">
+      <th mat-header-cell *matHeaderCellDef> Valor de Mercado </th>
+      <td mat-cell *matCellDef="let fundo"> {{fundo.plFundo}} </td>
+    </ng-container>
+
+    <!-- quantidade Column -->
+    <ng-container matColumnDef="quantidade">
+      <th mat-header-cell *matHeaderCellDef> Quantidade </th>
+      <td mat-cell *matCellDef="let fundo"> {{fundo.ativoExterior}} </td>
+    </ng-container>
+
+    <!-- quantidade Column -->
+    <ng-container matColumnDef="quantBloq">
+      <th mat-header-cell *matHeaderCellDef> Quant. Bloqueada </th>
+      <td mat-cell *matCellDef="let fundo"> {{fundo.prazoMedio}} </td>
+    </ng-container>
+
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="puMercado">
+      <th mat-header-cell *matHeaderCellDef> PU Mercado </th>
+      <td mat-cell *matCellDef="let fundo"> {{fundo.prazoMedio}} </td>
+    </ng-container>
+
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="plAtual">
+      <th mat-header-cell *matHeaderCellDef> PL Atual </th>
+      <td mat-cell *matCellDef="let fundo"> {{fundo.ativoExterior}} </td>
+    </ng-container>
+
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="plIdeal">
+      <th mat-header-cell *matHeaderCellDef> PL Ideal </th>
+      <td mat-cell *matCellDef="let fundo"> {{fundo.ativoExterior}} </td>
+    </ng-container>
+
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="limite">
+      <th mat-header-cell *matHeaderCellDef> Limite </th>
+      <td mat-cell *matCellDef="let fundo"> {{fundo.limiteFundo}} </td>
+    </ng-container>
+
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="necessidade">
+      <th mat-header-cell *matHeaderCellDef> Necessidade </th>
+      <td mat-cell *matCellDef="let fundo"> {{fundo.ativoExterior}} </td>
+    </ng-container>
+
+    <!-- Checkbox Column -->
+    <ng-container matColumnDef="select">
+      <th mat-header-cell *matHeaderCellDef>
+        <mat-checkbox (change)="$event ? masterToggle() : null" [checked]="selection.hasValue() && isAllSelected()"
+          [indeterminate]="selection.hasValue() && !isAllSelected()" [aria-label]="checkboxLabel()">
+        </mat-checkbox>
+      </th>
+      <td mat-cell *matCellDef="let row">
+        <mat-checkbox (click)="$event.stopPropagation()" (change)="$event ? selection.toggle(row) : null"
+          [checked]="selection.isSelected(row)" [aria-label]="checkboxLabel(row)">
+        </mat-checkbox>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="selection.toggle(row)">
+    </tr>
+  </table>
+</div>

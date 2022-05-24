@@ -10,41 +10,41 @@
     <div>Ano</div>
     <div>Fundo:</div>
     <div class="data">
-      <mat-icon class="icon--{{downOrUp(rentabilidadeFundo.dia)}}">
-        arrow_{{downOrUp(rentabilidadeFundo.dia)}}
+      <mat-icon class="icon--{{downOrUp(rentabilidadeFundo?.dia)}}">
+        arrow_{{downOrUp(rentabilidadeFundo?.dia)}}
       </mat-icon>
-      {{ rentabilidadeFundo.dia | number: '1.0-2' }}%
+      {{ rentabilidadeFundo.dia ? ((rentabilidadeFundo?.dia | number: '1.0-2') + '%') : '--' }}
     </div>
     <div class="data">
-      <mat-icon class="icon--{{downOrUp(rentabilidadeFundo.mes)}}">
-        arrow_{{downOrUp(rentabilidadeFundo.mes)}}
+      <mat-icon class="icon--{{downOrUp(rentabilidadeFundo?.mes)}}">
+        arrow_{{downOrUp(rentabilidadeFundo?.mes)}}
       </mat-icon>
-      {{ rentabilidadeFundo.mes | number: '1.0-2' }}%
+      {{ rentabilidadeFundo.mes ? ((rentabilidadeFundo?.mes | number: '1.0-2') + '%') : '--' }}
     </div>
     <div class="data">
-      <mat-icon class="icon--{{downOrUp(rentabilidadeFundo.ano)}}">
-        arrow_{{downOrUp(rentabilidadeFundo.ano)}}
+      <mat-icon class="icon--{{downOrUp(rentabilidadeFundo?.ano)}}">
+        arrow_{{downOrUp(rentabilidadeFundo?.ano)}}
       </mat-icon>
-      {{ rentabilidadeFundo.ano | number: '1.0-2' }}%
+      {{ rentabilidadeFundo.ano ? ((rentabilidadeFundo?.ano | number: '1.0-2') + '%') : '--' }}
     </div>
     <div>Benchmark:</div>
     <div class="data">
-      <mat-icon class="icon--{{downOrUp(rentabilidadeBench.dia)}}">
-        arrow_{{downOrUp(rentabilidadeBench.dia)}}
+      <mat-icon class="icon--{{downOrUp(rentabilidadeBench?.dia)}}">
+        arrow_{{downOrUp(rentabilidadeBench?.dia)}}
       </mat-icon>
-      {{ rentabilidadeBench.dia | number: '1.0-2' }}%
+      {{ rentabilidadeBench.dia ? ((rentabilidadeBench?.dia | number: '1.0-2') + '%') : '--' }}
     </div>
     <div class="data">
-      <mat-icon class="icon--{{downOrUp(rentabilidadeBench.mes)}}">
-        arrow_{{downOrUp(rentabilidadeBench.mes)}}
+      <mat-icon class="icon--{{downOrUp(rentabilidadeBench?.mes)}}">
+        arrow_{{downOrUp(rentabilidadeBench?.mes)}}
       </mat-icon>
-      {{ rentabilidadeBench.mes | number: '1.0-2' }}%
+      {{ rentabilidadeBench.mes ? ((rentabilidadeBench?.mes | number: '1.0-2') + '%') : '--' }}
     </div>
     <div class="data">
-      <mat-icon class="icon--{{downOrUp(rentabilidadeBench.ano)}}">
-        arrow_{{downOrUp(rentabilidadeBench.ano)}}
+      <mat-icon class="icon--{{downOrUp(rentabilidadeBench?.ano)}}">
+        arrow_{{downOrUp(rentabilidadeBench?.ano)}}
       </mat-icon>
-      {{ rentabilidadeBench.ano | number: '1.0-2' }}%
+      {{ rentabilidadeBench.ano ? ((rentabilidadeBench?.ano | number: '1.0-2') + '%') : '--' }}
     </div>
   </div>
 </div>

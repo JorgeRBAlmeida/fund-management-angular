@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-movimentacoes',
+  selector: 'app-movimentacoes-card',
   templateUrl: './movimentacoes.component.html',
   styleUrls: ['./movimentacoes.component.scss']
 })
