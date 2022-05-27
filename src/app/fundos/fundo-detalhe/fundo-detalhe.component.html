@@ -13,8 +13,16 @@
           <app-tab-dashboard></app-tab-dashboard>
         </ng-template>
       </mat-tab>
-      <mat-tab label="Previa GFI"></mat-tab>
-      <mat-tab label="Fluxo de Caixa"></mat-tab>
+      <mat-tab label="Previa GFI">
+        <ng-template matTabContent>
+          <app-tab-previa-gfi></app-tab-previa-gfi>
+        </ng-template>
+      </mat-tab>
+      <mat-tab label="Fluxo de Caixa">
+        <ng-template matTabContent>
+          <app-tab-fluxo-de-caixa></app-tab-fluxo-de-caixa>
+        </ng-template>
+      </mat-tab>
     </mat-tab-group>
   </div>
 
