@@ -10,16 +10,16 @@
     </div>
 
     <span class="card__pl__body--total">Total</span>
-    <span class="card__pl__body--value">R$ 569.635.675,57</span>
+    <span class="card__pl__body--value">{{ plTotal ? 'R$ ' + (plTotal | number) : '----,--' }}</span>
 
     <div class="card__pl__body--labels">
       <div class="card__pl__body--labels--brasil">
         <div>Brasil</div>
-        <div>R$ 409.846.979</div>
+        <div>{{ plBrasil ? 'R$ ' + (plBrasil | number) : '----,--' }}</div>
       </div>
       <div class="card__pl__body--labels--exterior">
         <div>Exterior</div>
-        <div>R$ 159.788.798</div>
+        <div>{{ plExterior ? 'R$ ' + (plExterior | number) : '----,--' }}</div>
       </div>
     </div>
   </div>

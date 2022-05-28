@@ -3,20 +3,20 @@
 
   <div class="card__dados__table">
     <div>Benchmark:</div>
-    <div class="data">110% CDI</div>
+    <div class="data">{{ dados.benchmark ? (dados.benchmark + '% CDI') : '(Não possui)' }}</div>
     <div>Cód. Drive:</div>
-    <div class="data">4919</div>
+    <div class="data">{{ dados.codDrive ? dados.codDrive : '(Não possui)' }}</div>
     <div>Cód. GFI:</div>
-    <div class="data">1136</div>
+    <div class="data">{{ dados.codGfi ? dados.codGfi : '(Não possui)' }}</div>
     <div>Conta Corrente:</div>
-    <div class="data">607,004</div>
+    <div class="data">{{ dados.contaCorrente ?( dados.contaCorrente | number) : '(Não possui)' }}</div>
     <div>Conta BB SEC:</div>
-    <div class="data">ATB 006068</div>
+    <div class="data">{{ dados.contaBbSec ? ('ATB ' + dados.contaBbSec) : '(Não possui)' }}</div>
     <div>Conta SELIC:</div>
-    <div class="data">(Não possui)</div>
+    <div class="data">{{ dados.contaSelic ? dados.contaSelic : '(Não possui)' }}</div>
     <div>Conta CETIP:</div>
-    <div class="data">(Não possui)</div>
+    <div class="data">{{ dados.contaCetip ? dados.contaCetip : '(Não possui)' }}</div>
     <div>Conta Allfunds:</div>
-    <div class="data">123456</div>
+    <div class="data">{{ dados.contaAllFunds ? dados.contaAllFunds : '(Não possui)' }}</div>
   </div>
 </div>

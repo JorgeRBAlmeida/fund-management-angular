@@ -1,21 +1,30 @@
 import { ChartData, ChartType, ChartEvent } from 'chart.js';
 import { Component, OnInit } from '@angular/core';
 
+const patrimonioLiquido = {
+  total: 569635675.57,
+  brasil: 409846979.16,
+  exterior: 159788696.41
+}
+
 @Component({
   selector: 'app-patrimonio-liquido-card',
   templateUrl: './patrimonio-liquido.component.html',
   styleUrls: ['./patrimonio-liquido.component.scss']
 })
 export class PatrimonioLiquidoComponent implements OnInit {
-
-
+  plTotal: number = 0;
+  plBrasil: number = 0;
+  plExterior: number = 0;
+  percentBrasil: number = 50;
+  percentExterior: number = 50;
   // Doughnut
   //public doughnutChartLabels: string[] = ['Brasil', 'Exterior'];
-  public doughnutChartData: ChartData<'doughnut'> = {
+  doughnutChartData: ChartData<'doughnut'> = {
     //labels: this.doughnutChartLabels,
     datasets: [
       {
-        data: [80, 20],
+        data: [this.percentBrasil, this.percentExterior],
         backgroundColor: [
           'rgb(251, 251, 36)',
           'rgb(70, 94, 255)'
@@ -31,21 +40,32 @@ export class PatrimonioLiquidoComponent implements OnInit {
       }
     ]
   };
-  public chartOptions: any = {
+  chartOptions: any = {
     cutout: 55
   };
-  public doughnutChartType: ChartType = 'doughnut';
+  doughnutChartType: ChartType = 'doughnut';
   constructor() { }
 
   ngOnInit(): void {
+    this.plTotal = patrimonioLiquido.total;
+    this.plBrasil = patrimonioLiquido.brasil;
+    this.plExterior = patrimonioLiquido.exterior;
+    this.setPercentageChar(this.plTotal, this.plBrasil, this.plExterior);
+
   }
 
+  private setPercentageChar(total: number, brasil: number, exterior: number): void {
+    this.percentBrasil = (brasil * 100) / total;
+    this.percentExterior = (exterior * 100) / total;
+    this.doughnutChartData.datasets[0].data[0] = this.percentBrasil;
+    this.doughnutChartData.datasets[0].data[1] = this.percentExterior;
+  }
   // events
-  public chartClicked({ event, active }: { event: ChartEvent, active: {}[] }): void {
+  chartClicked({ event, active }: { event: ChartEvent, active: {}[] }): void {
     console.log(event, active);
   }
 
-  public chartHovered({ event, active }: { event: ChartEvent, active: {}[] }): void {
+  chartHovered({ event, active }: { event: ChartEvent, active: {}[] }): void {
     console.log(event, active);
   }
 
