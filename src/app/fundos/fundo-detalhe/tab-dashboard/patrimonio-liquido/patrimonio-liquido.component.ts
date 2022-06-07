@@ -41,7 +41,17 @@ export class PatrimonioLiquidoComponent implements OnInit {
     ]
   };
   chartOptions: any = {
-    cutout: 55
+    cutout: 55,
+    plugins: {
+      tooltip: {
+        callbacks: {
+          label: (tooltipItem: any) => {
+            let label = tooltipItem.dataset.data[tooltipItem.dataIndex].toFixed(2);
+            return (` ${label} %`);
+          }
+        }
+      }
+    }
   };
   doughnutChartType: ChartType = 'doughnut';
   constructor() { }

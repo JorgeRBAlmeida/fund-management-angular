@@ -18,9 +18,11 @@ $warning-color: #b82e2e;
 
   &__table {
     display: grid;
+    height: 89%;
 
     grid-template-rows: repeat(8, 1fr);
     grid-template-columns: repeat(2, 1fr);
+    align-items: center;
 
     &>* {
       padding: 0.5rem;

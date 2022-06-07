@@ -18,7 +18,7 @@ import { FundoNaoEncontradoComponent } from './fundo-nao-encontrado/fundo-nao-en
 import { TabDashboardComponent } from './fundo-detalhe/tab-dashboard/tab-dashboard.component';
 import { TabPreviaGfiComponent } from './fundo-detalhe/tab-previa-gfi/tab-previa-gfi.component';
 import { TabFluxoDeCaixaComponent } from './fundo-detalhe/tab-fluxo-de-caixa/tab-fluxo-de-caixa.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RentabilidadeComponent } from './fundo-detalhe/tab-dashboard/rentabilidade/rentabilidade.component';
 import { MovimentacoesComponent } from './fundo-detalhe/tab-dashboard/movimentacoes/movimentacoes.component';
 import { DadosCadastraisComponent } from './fundo-detalhe/tab-dashboard/dados-cadastrais/dados-cadastrais.component';
@@ -59,7 +59,9 @@ import { CarteiraExteriorComponent } from './fundo-detalhe/tab-dashboard/carteir
     NgChartsModule,
     FormsModule,
     MatCheckboxModule,
-    MatTableModule
+    MatTableModule,
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class FundosModule { }
