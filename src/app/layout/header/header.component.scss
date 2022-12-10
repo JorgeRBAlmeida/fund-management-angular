@@ -1,0 +1,96 @@
+.spacer {
+  flex: 1 1 auto;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.user {
+  display: block;
+  margin-left: auto;
+  margin-right: -1rem;
+  padding: 0.2rem 1.5rem 0 1.5rem;
+  height: 100%;
+  width: 8rem;
+  background-color: #6276ff;
+  position: relative;
+  cursor: pointer;
+
+  & > * {
+    transition: all .2s;
+    display: flex;
+    flex-direction: row;
+  }
+
+  &__visible {
+    &__text {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      margin: 1rem auto 1rem 0;
+
+      & > * {
+        line-height: 100%;
+      }
+
+      &--id {
+        font-size: 1rem;
+      }
+
+      &--name {
+        display: inline-block;
+        font-size: 0.7rem;
+        font-weight: 300;
+      }
+    }
+
+    &__icon {
+      align-self: center;
+      margin: 0.2rem 0 0 auto;
+      color: hsla(0, 0%, 100%, 50%);
+
+    }
+  }
+
+  &__invisible {
+    //position: absolute;
+    transform: translateY(100%);
+    top: 100%;
+
+    &__text {
+      display: flex;
+      align-items: center;
+      margin-right: auto;
+      line-height: 100%;
+      font-size: 1.3rem;
+    }
+
+    &__icon {
+      align-self: center;
+      justify-content: flex-end;
+      margin: 0.5rem 0 0 auto;
+      color: hsla(0, 0%, 100%, 50%);
+
+    }
+  }
+
+  &:hover &__visible {
+    transform: translateY(-100%);
+  }
+
+  &:hover &__invisible {
+    transform: translateY(-120%);
+  }
+}
+
+.titulo {
+  align-items: center;
+  padding: 0.4rem 0 0 1rem;
+}
+
+.material-icons {
+  font-size: 1.5rem;
+}
