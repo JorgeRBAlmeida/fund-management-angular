@@ -2,8 +2,8 @@
 
 # Featues
 - Fund list
- - Fund card
- - Fund add
+  - Fund card
+  - Fund add
 - Fund details
   - Dashboard
   - Wallet
