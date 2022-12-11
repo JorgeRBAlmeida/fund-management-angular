@@ -1,0 +1,114 @@
+{
+  "funds": [
+    {
+      "id": 4912,
+      "name": "4912 | TOP RF PRIVATE CREDIT",
+      "status": "clear",
+      "offShore": 20.05,
+      "hedge": 95.01,
+      "limit": 0,
+      "netEquity": 569635675.57
+    },
+    {
+      "id": 504912,
+      "name": "504912 | RFC CP IE LP FI",
+      "status": "clear",
+      "offShore": 20.05,
+      "hedge": 95.01,
+      "limit": 0,
+      "netEquity": 569635675.57
+    },
+    {
+      "id": 4969,
+      "name": "4969 | RF LP HEDGE CRED PRIV IE FI",
+      "status": "priority_high",
+      "offShore": 20.05,
+      "hedge": 95.01,
+      "limit": 0,
+      "netEquity": 569635675.57
+    },
+    {
+      "id": 4994,
+      "name": "4994 | RF LP GLOBAL HEDGE CRPR IE FI",
+      "status": "priority_high",
+      "offShore": 20.05,
+      "hedge": 95.01,
+      "limit": 0,
+      "netEquity": 569635675.57
+    },
+    {
+      "id": 6223,
+      "name": "6223 | MM BRAZILPREV EXTERN IV IE FI",
+      "status": "priority_high",
+      "offShore": 20.05,
+      "hedge": 95.01,
+      "limit": 0,
+      "netEquity": 569635675.57
+    },
+    {
+      "id": 140,
+      "name": "140 | RF DEBT EXTERNAL LP MIL FI",
+      "status": "check",
+      "offShore": 20.05,
+      "hedge": 95.01,
+      "limit": 0,
+      "netEquity": 569635675.57
+    },
+    {
+      "id": 5014,
+      "name": "5014 | RF LP VERTICE VII CP IE FI",
+      "status": "check",
+      "offShore": 20.05,
+      "hedge": 95.01,
+      "limit": 0,
+      "netEquity": 569635675.57
+    },
+    {
+      "id": 4569,
+      "name": "4569 | TOP PRIVATE RF LP",
+      "status": "check",
+      "offShore": 20.05,
+      "hedge": 95.01,
+      "limit": 0,
+      "netEquity": 569635675.57
+    },
+    {
+      "id": 4734,
+      "name": "4734 | TOP RF Q FI RF LP",
+      "status": "check",
+      "offShore": 20.05,
+      "hedge": 95.01,
+      "limit": 0,
+      "netEquity": 569635675.57
+    }
+  ],
+  "notAvalibleFunds": [
+    {
+      "id": 1543556,
+      "name": "1543556 | RF EXTERNAL Q FI RF LP",
+      "status": "",
+      "offShore": 20.05,
+      "hedge": 95.01,
+      "limit": 0,
+      "netEquity": 569635675.57
+    },
+    {
+      "id": 634329,
+      "name": "634329 | VERTICE VII CP Q FI",
+      "status": "",
+      "offShore": 20.05,
+      "hedge": 95.01,
+      "limit": 0,
+      "netEquity": 569635675.57
+    },
+    {
+      "id": 85488,
+      "name": "85488 | TOP RF DEBT LP",
+      "status": "",
+      "offShore": 20.05,
+      "hedge": 95.01,
+      "limit": 0,
+      "netEquity": 569635675.57
+    }
+  ]
+}
