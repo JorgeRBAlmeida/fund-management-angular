@@ -77,18 +77,18 @@
     }
   }
 
-  &:hover &__visible {
+  &:hover &__visible, &:active &__visible {
     transform: translateY(-100%);
   }
 
-  &:hover &__invisible {
+  &:hover &__invisible,  &:active &__invisible {
     transform: translateY(-120%);
   }
 }
 
 .titulo {
   align-items: center;
-  padding: 0.4rem 0 0 1rem;
+  cursor: pointer;
 }
 
 .material-icons {
