@@ -15,7 +15,7 @@
   padding: 0.2rem 1.5rem 0 1.5rem;
   height: 100%;
   width: 10rem;
-  background-color: #6276ff;
+  background-color: #4a5ee4;
   position: relative;
   cursor: pointer;
 
@@ -37,12 +37,12 @@
       }
 
       &--id {
-        font-size: 1rem;
+        font-size: 1.3rem;
       }
 
       &--name {
         display: inline-block;
-        font-size: 0.7rem;
+        font-size: 0.8rem;
         font-weight: 300;
       }
     }
@@ -82,7 +82,7 @@
   }
 
   &:hover &__invisible,  &:active &__invisible {
-    transform: translateY(-120%);
+    transform: translateY(-130%);
   }
 }
 
