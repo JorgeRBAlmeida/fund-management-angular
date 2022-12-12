@@ -1,0 +1,62 @@
+<div class="card__rent">
+  <div class="card__rent__title">
+    <h2 class="card__rent__title--text">Rentability</h2>
+    <mat-icon class="card__rent__title--icon">ssid_chart</mat-icon>
+  </div>
+  <mat-divider></mat-divider>
+  <div class="card__rent__table" *ngIf="rentabilityFund && rentabilityBench; else empty">
+    <div>&nbsp;</div>
+    <div>Dia</div>
+    <div>Mês</div>
+    <div>Ano</div>
+    <div>Fundo:</div>
+    <div class="data">
+      <span [ngClass]="{'negative': rentabilityFund.day < 0 }">
+        {{ rentabilityFund.day ? ((rentabilityFund.day | number: '1.0-2') + '%') : '--' }}
+      </span>
+    </div>
+    <div class="data">
+      <span [ngClass]="{'negative': rentabilityFund.mouth < 0 }">
+        {{ rentabilityFund.mouth ? ((rentabilityFund.mouth | number: '1.0-2') + '%') : '--' }}
+      </span>
+    </div>
+    <div class="data">
+      <span [ngClass]="{'negative': rentabilityFund.year < 0 }">
+        {{ rentabilityFund.year ? ((rentabilityFund.year | number: '1.0-2') + '%') : '--' }}
+      </span>
+    </div>
+    <div>Benchmark:</div>
+    <div class="data">
+      <span [ngClass]="{'negative': rentabilityBench.day < 0 }">
+        {{ rentabilityBench.day ? ((rentabilityBench.day | number: '1.0-2') + '%') : '--' }}
+      </span>
+    </div>
+    <div class="data">
+      <span [ngClass]="{'negative': rentabilityBench.mouth < 0 }">
+        {{ rentabilityBench.mouth ? ((rentabilityBench.mouth | number: '1.0-2') + '%') : '--' }}
+      </span>
+    </div>
+    <div class="data">
+      <span [ngClass]="{'negative': rentabilityBench.year < 0 }">
+        {{ rentabilityBench.year ? ((rentabilityBench.year | number: '1.0-2') + '%') : '--' }}
+      </span>
+    </div>
+  </div>
+  <ng-template #empty>
+    <div class="container h-100">
+      <div class="row h-100">
+        <div class="col align-self-start">
+          &nbsp;
+        </div>
+        <div class="col align-self-center">
+          <h2>Rentability data is not loading. Contact the support team.</h2>
+        </div>
+        <div class="col align-self-end">
+          &nbsp;
+        </div>
+    </div>
+    </div>
+  </ng-template>
+</div>
+
+

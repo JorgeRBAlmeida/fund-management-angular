@@ -200,23 +200,42 @@ export class FundsService extends CrudService<Fund> {
     )
   }
 
-  getFundById(id: number): Observable<Fund | undefined> {
+  getFundById(id: number): Observable<Fund> {
     /* super.getByIdEndPoint = `/funds/${id}`;
     return (super.getById()); */
     return this.getFunds().pipe(
       map(res => {
-        console.log(res);
-        return   res.find(fund => fund.id === id)
+        let find = (res.find(fund => fund.id === id));
+        console.log(find);
+        let fundToReturn: Fund = find !== undefined ? find : {
+          id: 0,
+          name: '',
+          status: '',
+          offShore: 0,
+          hedge: 0,
+          limit: 0,
+          netEquity: 0
+        };
+        return fundToReturn;
       }));
   }
 
-  getNotAvalibleFundById(id: number): Observable<Fund | undefined> {
+  getNotAvalibleFundById(id: number): Observable<Fund> {
     /* super.getByIdEndPoint = `/notAvalibleFunds/${id}`;
     return (super.getById()); */
     return this.getNotAvalibleFunds().pipe(
       map(res => {
-        console.log(res);
-        return   res.find(fund => fund.id === id)
+        let find = (res.find(fund => fund.id === id));
+        let fundToReturn: Fund = find !== undefined ? find : {
+          id: 0,
+          name: '',
+          status: '',
+          offShore: 0,
+          hedge: 0,
+          limit: 0,
+          netEquity: 0
+        };
+        return fundToReturn;
       }));
   }
 

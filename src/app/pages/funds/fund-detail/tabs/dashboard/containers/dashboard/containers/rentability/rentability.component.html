@@ -1,0 +1,9 @@
+<fm-rentability-card
+  *ngIf="data$ |async as data;
+  else loading"
+  [data]="data">
+</fm-rentability-card>
+
+<ng-template #loading>
+  <mat-spinner></mat-spinner>
+</ng-template>

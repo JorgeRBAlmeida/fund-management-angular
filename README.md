@@ -6,6 +6,11 @@
   - Fund add
 - Fund details
   - Dashboard
+    - Rentability
+    - Movements
+    - Register Data
+    - Net Equity
+    - Exchange Hedge
   - Wallet
   - Flow
   - Status
