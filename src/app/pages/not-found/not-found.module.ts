@@ -1,3 +1,4 @@
+import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NotFoundComponent } from './not-found.component';
@@ -10,6 +11,7 @@ import { MatButtonModule } from '@angular/material/button';
   declarations: [ NotFoundComponent ],
   imports: [
     CommonModule,
+    RouterModule,
     // MATERIAL
     MatIconModule,
     MatButtonModule
