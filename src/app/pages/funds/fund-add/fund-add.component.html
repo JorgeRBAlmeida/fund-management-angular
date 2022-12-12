@@ -1,1 +1,41 @@
-<p>fund-add works!</p>
+<!-- <div class="card card__add h-100">
+  <form [formGroup]="formId">
+    <div class="icon-title">
+      <bb-icon pack="bbds-ui" icon="append"></bb-icon>
+    </div>
+    <h4 class="mb-4">Novo fundo</h4>
+      <bb-text-field
+      altInput="Na area de edição informe apenas numeros"
+      label="Código Drive"
+      class="mb-3">
+        <input bbInputRef placeholder="Insira o código aqui" formControlName="id" type="text" pattern="[0-9]*">
+        <bb-error
+        *ngIf="formId.get('id')?.touched && formId.errors?.required">
+          Campo obrigatório
+        </bb-error>
+      </bb-text-field>
+      <button
+        bbButton
+        size="small"
+        kind="primary"
+        (click)="add.emit(newFund(formId.get('id')?.value))">
+          Adicionar
+      </button>
+  </form>
+</div> -->
+<div class="card card__add">
+  <div class="icon--title">
+    <mat-icon color="primary">add_circle</mat-icon>
+  </div>
+  <h2>Add new fund</h2>
+  <mat-form-field class="form--field">
+    <mat-label>Fund ID</mat-label>
+    <input matInput type="text" [formControl]="formId">
+    <button *ngIf="formId.getRawValue()" matSuffix mat-icon-button aria-label="Clear" (click)="formId.setValue('')">
+      <mat-icon>close</mat-icon>
+    </button>
+    <mat-error *ngIf="formId.invalid">{{ getErrorMessage() }}</mat-error>
+  </mat-form-field>
+  <button mat-flat-button color="accent" class="form--button"
+  (click)="sendId()">Send Id number</button>
+</div>

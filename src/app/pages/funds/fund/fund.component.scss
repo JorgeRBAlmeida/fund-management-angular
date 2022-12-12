@@ -1,0 +1,166 @@
+$base-color: #1d61a4;
+$standard-color: #56cb95;
+$alert-color: #e3c52f;
+$warning-color: #b82e2e;
+$gray-color: #a1a1a1;
+
+  .card {
+    padding: 1rem;
+    border-radius: 0.25rem;
+    background-color: #fff;
+    border: 1px solid rgba($color: #000000, $alpha: 0.1);
+    position: relative;
+
+    &__title {
+      display: inline-block;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+      width: 20rem;
+    }
+
+    &__icon {
+      position: absolute;
+      top: .5rem;
+      right: .5rem;
+    }
+
+    &--content {
+      border: none;
+      box-shadow: 0px 1px 1px rgb(21 21 24 / 18%),
+                0px 0px 1px rgb(25 25 28 / 25%)
+    }
+
+    &__footer {
+      cursor: pointer;
+    }
+  }
+
+.fund {
+  display: grid;
+  background-color: #fff;
+  border-radius: 0.25rem;
+  box-shadow: 2px 2px 4px rgba($color: #000000, $alpha: 0.2);
+  height: 14rem;
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.2s;
+
+  grid-template-areas:
+    "a ti ti"
+    "a di di"
+    "a b0 b0"
+    "a b0 b0"
+    "a b0 b0"
+    "a b0 b0"
+    "a b0 b0";
+
+  grid-template-columns: 4px 1fr 1fr;
+  grid-template-rows: auto 1px repeat(5, 1fr);
+
+  &__body {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__body--table {
+    display: grid;
+    padding-top: 1.5rem;
+    gap: 0.2rem;
+    grid-area: b0;
+    grid-template-areas:
+      "i1 v1"
+      "i2 v2"
+      "i3 v3"
+      "i4 v4"
+      "i5 v5";
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+
+    @for $i from 1 through 5 {
+      .item--#{$i} {
+        grid-area: i#{$i};
+      }
+    }
+
+    @for $j from 1 through 5 {
+      .value--#{$j} {
+        grid-area: v#{$j};
+        margin-left: 2rem;
+        color: adjust-hue($color: #9b9b9b, $degrees: 0);
+      }
+    }
+  }
+
+  &:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 4px 4px 16px rgba($color: #000000, $alpha: 0.15);
+  }
+
+  &__status--std {
+    grid-area: a;
+    background-color: $standard-color;
+
+    &--icon--std {
+      position: absolute;
+      top: 47%;
+      background-color: $standard-color;
+      color: #fff;
+      border-radius: 0 50% 50% 0;
+      padding: 0.3rem 0.3rem 0 0.2rem;
+    }
+  }
+
+  &__status--alert {
+    grid-area: a;
+    background-color: $alert-color;
+
+    &--icon--alert {
+      position: absolute;
+      top: 47%;
+      background-color: $alert-color;
+      color: #fff;
+      border-radius: 0 50% 50% 0;
+      padding: 0.3rem 0.3rem 0 0.2rem;
+    }
+  }
+
+  &__status--warn {
+    grid-area: a;
+    background-color: $warning-color;
+
+    &--icon--warn {
+      position: absolute;
+      top: 47%;
+      background-color: $warning-color;
+      color: #fff;
+      border-radius: 0 50% 50% 0;
+      padding: 0.3rem 0.3rem 0 0.2rem;
+    }
+  }
+
+  &__status--unset {
+    grid-area: a;
+    background-color: $gray-color;
+  }
+
+  &__title {
+    grid-area: ti;
+    font-size:medium;
+    text-overflow: ellipsis;
+    margin: 0.5rem 0 0 0.5rem;
+    white-space: nowrap;
+    overflow: hidden;
+    height: 1rem;
+    width: 85%;
+  }
+
+  &__divider {
+    background-color: $base-color;
+    height: 1px;
+    margin: 0;
+    width: 100%;
+  }
+}

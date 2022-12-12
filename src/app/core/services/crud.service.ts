@@ -51,6 +51,7 @@ export class CrudService<T> {
   }
 
   getById(params?: any): Observable<T> {
+    console.log(`${this.api}${this.END_POINT_GET}`);
     return this.http.get<T>(`${this.api}${this.END_POINT_GET}`, { params })
       .pipe(
         tap(console.log),

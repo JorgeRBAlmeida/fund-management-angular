@@ -7,10 +7,17 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HeaderModule } from './layout/header/header.module';
 import { NotFoundModule } from './pages/not-found/not-found.module';
 import { HttpClientModule } from '@angular/common/http';
+import { MatDialogModule, MatDialogRef } from '@angular/material/dialog';
+import { DialogService } from './core/utils/dialog.service';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { MatCardModule } from '@angular/material/card';
+import { DialogComponent } from './core/utils/dialog/dialog.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    DialogComponent
   ],
   imports: [
     BrowserModule,
@@ -19,9 +26,20 @@ import { HttpClientModule } from '@angular/common/http';
     HttpClientModule,
     // LAYOUT
     HeaderModule,
-    NotFoundModule
+    NotFoundModule,
+    // MATERIAL
+    MatDialogModule,
+    MatIconModule,
+    MatButtonModule,
+    MatCardModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: MatDialogRef,
+      useValue: {}
+    },
+    DialogService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

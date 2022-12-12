@@ -1,1 +1,40 @@
-<p>fund works!</p>
+<div class="card card--content">
+        <!-- title -->
+  <h2 class="card__title">{{ fund.name }}</h2>
+      <!-- remove button -->
+  <div class="card__icon">
+    <button mat-icon-button
+            color="accent"
+            aria-label="Delete fund button"
+            (click)="remove.emit(true)">
+      <mat-icon>delete</mat-icon>
+    </button>
+  </div>
+  <div class="fund__body" tabindex="0">
+    <div class="fund__divider">&nbsp;</div>
+    <div class="mx-auto">
+        <div class="fund__body--table">
+          <div class="item--1">Offshore percentage</div>
+          <div class="value--1">
+            {{ fund.offShore ? ((fund.offShore | number: '1.0-2') + '%') : '--' }}
+          </div>
+          <div class="item--2">Hedge</div>
+          <div class="value--2">
+            {{ fund.hedge ? ((fund.hedge | number: '1.0-2') + '%') : '--' }}
+          </div>
+          <div class="item--3">Limits</div>
+          <div class="value--3">
+            {{ fund.limit | number: '1.2-2' }}
+          </div>
+          <div class="item--4">Net equity</div>
+          <div class="value--4">
+            {{ fund.netEquity | currency: 'BRL' }}
+          </div>
+        </div>
+      </div>
+  </div>
+
+  <div class="card__footer">
+    <button mat-button color="primary" (click)="detail.emit(true)">Show more ></button>
+  </div>
+</div>
