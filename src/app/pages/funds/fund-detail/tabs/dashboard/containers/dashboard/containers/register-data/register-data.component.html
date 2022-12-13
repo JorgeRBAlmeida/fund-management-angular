@@ -1,6 +1,6 @@
-<fm-register-data-card *ngIf="data$ |async as data; else loading" [data]="data">
+<fm-register-data-card @fadeIn *ngIf="data$ |async as data; else loading" [data]="data">
 </fm-register-data-card>
 
 <ng-template #loading>
-    <mat-spinner></mat-spinner>
+  <fm-spinner-card @fadeIn title="Register Data"></fm-spinner-card>
 </ng-template>

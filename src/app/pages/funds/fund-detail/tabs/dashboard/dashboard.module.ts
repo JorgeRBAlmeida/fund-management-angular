@@ -22,6 +22,7 @@ import { NgChartsModule } from 'ng2-charts';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
+import { SpinnerCardModule } from 'src/app/core/utils/spinner-card/spinner-card.module';
 
 
 
@@ -42,6 +43,7 @@ import { MatInputModule } from '@angular/material/input';
   imports: [
     CommonModule,
     ReactiveFormsModule,
+    SpinnerCardModule,
     // MATERIAL
     MatIconModule,
     MatButtonModule,
@@ -49,7 +51,6 @@ import { MatInputModule } from '@angular/material/input';
     MatDividerModule,
     MatFormFieldModule,
     MatInputModule,
-
     // OTHERS
     NgChartsModule
   ],

@@ -1,9 +1,9 @@
-<fm-net-equity-card
+<fm-net-equity-card @fadeIn
   *ngIf="data$ |async as data;
   else loading"
   [data]="data">
 </fm-net-equity-card>
 
 <ng-template #loading>
-  <mat-spinner></mat-spinner>
+  <fm-spinner-card @fadeIn title="Net Equity"></fm-spinner-card>
 </ng-template>

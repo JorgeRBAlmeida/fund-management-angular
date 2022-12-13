@@ -9,7 +9,7 @@
   <ng-container  *ngIf="funds$ | async as funds">
     <section class="funds">
       <fm-fund-add (add)="addFund($event)"></fm-fund-add>
-      <fm-fund-card
+      <fm-fund-card @fadeIn
         *ngFor="let fund of funds;
         trackBy: trackById"
         [fund]="fund"

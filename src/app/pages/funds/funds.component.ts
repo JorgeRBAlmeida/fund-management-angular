@@ -1,17 +1,18 @@
 import { Component, OnInit } from '@angular/core';
-import { MatDialogRef, MatDialog } from '@angular/material/dialog';
+import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Fund } from 'src/app/core/models/fund.model';
 
+import { fadeIn } from '../../animations/fadeIn.animations';
 import { FundsService } from '../../core/services/funds.service';
-import { DialogService } from '../../core/utils/dialog.service';
 import { DialogComponent } from '../../core/utils/dialog/dialog.component';
 
 
 @Component({
   selector: 'fm-funds',
   templateUrl: './funds.component.html',
-  styleUrls: ['./funds.component.scss']
+  styleUrls: ['./funds.component.scss'],
+  animations: [fadeIn]
 })
 export class FundsComponent implements OnInit {
 

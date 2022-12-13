@@ -1,5 +1,5 @@
 <fm-hedge-card *ngIf="data$ |async as data; else loading" [data]="data"></fm-hedge-card>
 
 <ng-template #loading>
-  <mat-spinner></mat-spinner>
+  <fm-spinner-card  title="Hedge"></fm-spinner-card>
 </ng-template>

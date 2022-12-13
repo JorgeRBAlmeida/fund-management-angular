@@ -1,9 +1,9 @@
-<fm-movements-card
+<fm-movements-card @fadeIn
   *ngIf="data$ |async as data;
   else loading"
   [data]="data">
 </fm-movements-card>
 
 <ng-template #loading>
-  <mat-spinner></mat-spinner>
+  <fm-spinner-card @fadeIn title="Movements"></fm-spinner-card>
 </ng-template>

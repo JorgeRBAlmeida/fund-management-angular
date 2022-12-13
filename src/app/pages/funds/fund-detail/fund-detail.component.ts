@@ -10,7 +10,6 @@ import { Fund } from '../../../core/models/fund.model';
 })
 export class FundDetailComponent implements OnInit, AfterViewInit {
 
-
   fund?: Fund;
 
   constructor(

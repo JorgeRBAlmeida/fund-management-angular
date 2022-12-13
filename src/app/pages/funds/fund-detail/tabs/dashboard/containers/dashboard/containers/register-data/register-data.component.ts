@@ -6,11 +6,14 @@ import { delay } from 'rxjs/internal/operators/delay';
 import { map } from 'rxjs/internal/operators/map';
 import { RegisterData } from 'src/app/core/models/dashboard/register-data.models';
 import { RegisterDataService } from 'src/app/core/services/dashboard/register-data.service';
+import { fadeIn } from '../../../../../../../../../animations/fadeIn.animations';
+import { fadeOut } from '../../../../../../../../../animations/fadeOut.animations';
 
 @Component({
   selector: 'fm-register-data',
   templateUrl: './register-data.component.html',
-  styleUrls: ['./register-data.component.scss']
+  styleUrls: ['./register-data.component.scss'],
+  animations: [fadeIn, fadeOut]
 })
 export class RegisterDataComponent {
   data$: Observable<RegisterData> = this.service.getDadosCadastrais().pipe(delay(1000),
