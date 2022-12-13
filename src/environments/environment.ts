@@ -5,7 +5,9 @@
 export const environment = {
   production: false,
   API: 'http://localhost:3000',
-  BASE_HREF: '/'
+  BASE_HREF: '/',
+  LOGIN_URL: '',
+  API_LOGIN: ''
 };
 
 /*

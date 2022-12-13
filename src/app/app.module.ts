@@ -1,19 +1,22 @@
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NgModule } from '@angular/core';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
+import { MatDialogModule, MatDialogRef } from '@angular/material/dialog';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatIconModule } from '@angular/material/icon';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NgChartsModule } from 'ng2-charts';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { DialogService } from './core/utils/dialog.service';
+import { DialogComponent } from './core/utils/dialog/dialog.component';
 import { HeaderModule } from './layout/header/header.module';
 import { NotFoundModule } from './pages/not-found/not-found.module';
-import { HttpClientModule } from '@angular/common/http';
-import { MatDialogModule, MatDialogRef } from '@angular/material/dialog';
-import { DialogService } from './core/utils/dialog.service';
-import { MatButtonModule } from '@angular/material/button';
-import { MatIconModule } from '@angular/material/icon';
-import { MatCardModule } from '@angular/material/card';
-import { DialogComponent } from './core/utils/dialog/dialog.component';
-import { NgChartsModule } from 'ng2-charts';
+import { GlobalHttpErrorHandler } from './core/interceptors/global-http-error-handler.interceptor';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,6 +35,7 @@ import { NgChartsModule } from 'ng2-charts';
     MatIconModule,
     MatButtonModule,
     MatCardModule,
+    MatSnackBarModule,
     // OTHERS
     NgChartsModule.forRoot()
   ],
@@ -40,7 +44,12 @@ import { NgChartsModule } from 'ng2-charts';
       provide: MatDialogRef,
       useValue: {}
     },
-    DialogService
+    DialogService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: GlobalHttpErrorHandler,
+      multi: true
+    }
   ],
   bootstrap: [AppComponent]
 })

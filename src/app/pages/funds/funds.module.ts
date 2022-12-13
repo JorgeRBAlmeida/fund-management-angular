@@ -12,7 +12,8 @@ import { FundAddComponent } from './fund-add/fund-add.component';
 import { FundComponent } from './fund/fund.component';
 import { FundsComponent } from './funds.component';
 import { MatDialogModule } from '@angular/material/dialog';
-import { FundDetailResolver } from 'src/app/core/guards/fund-detail.resolver';
+import { FundDetailResolver } from 'src/app/core/resolvers/fund-detail.resolver';
+import { AuthGuard } from 'src/app/core/auth/auth.guard';
 
 
 
@@ -39,7 +40,7 @@ import { FundDetailResolver } from 'src/app/core/guards/fund-detail.resolver';
       },
       {
         path: 'fund/:id',
-        //canActivate: [AuthGuard],
+        canActivate: [AuthGuard],
         loadChildren: () => import('./fund-detail/fund-detail.module')
        .then((m) => m.FundDetailModule),
        resolve: { fund: FundDetailResolver }

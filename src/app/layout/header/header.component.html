@@ -1,11 +1,11 @@
-<mat-toolbar color="primary" class="header mat-elevation-z0">
+<mat-toolbar color="primary" class="header mat-elevation-z0" *ngIf="authService.userData">
   <div class="logo">&nbsp;</div>
   <div class="titulo" [routerLink]="''">{{ title | titlecase }}</div>
   <div class="user">
     <div class="user__visible">
       <div class="user__visible__text">
-        <span class="user__visible__text--id">1234B55G</span>
-        <span class="user__visible__text--name">Frederic</span>
+        <span class="user__visible__text--id">{{ authService.userData.id }}</span>
+        <span class="user__visible__text--name">{{ authService.userData.userName }}</span>
       </div>
       <div class="user__visible__icon">
         <mat-icon aria-hidden="false" aria-label="icone de usuário">person</mat-icon>

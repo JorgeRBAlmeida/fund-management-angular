@@ -1,12 +1,14 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FundDetailComponent } from './fund-detail.component';
-import { RouterModule } from '@angular/router';
-import {MatTabsModule} from '@angular/material/tabs';
-import { MatIconModule } from '@angular/material/icon';
+import { NgModule } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatIconModule } from '@angular/material/icon';
+import { MatTabsModule } from '@angular/material/tabs';
+import { RouterModule } from '@angular/router';
+import { AuthGuard } from 'src/app/core/auth/auth.guard';
+
+import { FundDetailComponent } from './fund-detail.component';
 import { DashboardModule } from './tabs/dashboard/dashboard.module';
-import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 
 
@@ -23,6 +25,7 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
     MatTabsModule,
     MatIconModule,
     MatButtonModule,
+    MatDividerModule,
     // ROUTES
     RouterModule.forChild([
       /* { path: '',
@@ -30,7 +33,7 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
         redirectTo: 'dashboard'
       }, */
       { path: '', component: FundDetailComponent,
-        //canActivate: [AuthGuard],
+        canActivate: [AuthGuard],
         /* children: [
           {
             path: 'dashboard',
