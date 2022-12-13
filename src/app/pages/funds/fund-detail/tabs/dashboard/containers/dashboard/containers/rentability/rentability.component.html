@@ -1,0 +1,9 @@
+<fm-rentability-card @fadeIn
+  *ngIf="data$ |async as data;
+  else loading"
+  [data]="data">
+</fm-rentability-card>
+
+<ng-template #loading>
+  <fm-spinner-card @fadeIn title="Rentability"></fm-spinner-card>
+</ng-template>

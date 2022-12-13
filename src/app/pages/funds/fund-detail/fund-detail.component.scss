@@ -1,0 +1,65 @@
+$base-color: #3f51b5;
+$standard-color: #56cb95;
+$alert-color: #fdf429;
+$warning-color: #b82e2e;
+
+.detail {
+  display: grid;
+  overflow: hidden;
+  position: relative;
+  transition: all 0.2s;
+  justify-items: center;
+  position: relative;
+
+  grid-template-rows: auto 1fr;
+
+  &__top {
+    background-color: rgba(255, 255, 255, 0.95);
+    box-shadow: 1px 1px 2px rgba($color: #000000, $alpha: 0.1);
+    margin-top: -1rem;
+    padding: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    &--icon {
+      margin-top: 0.75rem;
+      position: absolute;
+      left: 1%;
+      top: -.7rem;
+    }
+
+    &--title {
+      display: inline-block;
+      font-weight: 600;
+      margin-bottom: -6px;
+      margin: 0.5rem;
+      color: $base-color;
+    }
+  }
+
+  &__tab {
+    width: 98%;
+  }
+
+  &__body {
+    margin: 2.5rem;
+    width: 96%;
+  }
+}
+
+.sticky {
+  position: sticky;
+  top: 0;
+  margin-top: 0;
+  z-index: 100;
+  overflow: hidden;
+}
+
+.mt-extra {
+  margin-top: 3.7rem;
+}
+
+.material-icons {
+  font-size: 1.7rem;
+}

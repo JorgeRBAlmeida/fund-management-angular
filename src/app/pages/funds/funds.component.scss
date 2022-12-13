@@ -1,0 +1,23 @@
+.page-title {
+  display: flex;
+  margin: 1.5rem;
+  gap: .5rem;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.funds {
+  margin: 0 1rem 1rem 1rem;
+  padding-bottom: 2rem;
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(24rem, 1fr));
+}
+
+.spinner {
+  display: flex;
+  flex: 1 1 100%;
+  height: 50vh;
+  justify-content: center;
+  align-items: center;
+}

@@ -1,0 +1,31 @@
+<div class="detail__top sticky" *ngIf="fund">
+  <div class="detail__top--icon">
+    <button mat-icon-button color="primary" [routerLink]="''">
+     <mat-icon>arrow_back</mat-icon>
+    </button>
+  </div>
+  <h1 class="detail__top--title">{{ fund.name }}</h1>
+</div>
+<mat-tab-group class="tab-group">
+  <mat-tab label="Dashboard">
+    <ng-template matTabContent>
+      <mat-divider></mat-divider>
+      <fm-dashboard></fm-dashboard>
+    </ng-template>
+  </mat-tab>
+  <mat-tab label="Wallet">
+    <ng-template matTabContent>
+      <mat-divider></mat-divider>
+    </ng-template>
+  </mat-tab>
+  <mat-tab label="Flow">
+    <ng-template matTabContent>
+      <mat-divider></mat-divider>
+    </ng-template>
+  </mat-tab>
+  <mat-tab label="Status">
+    <ng-template matTabContent>
+      <mat-divider></mat-divider>
+    </ng-template>
+  </mat-tab>
+</mat-tab-group>

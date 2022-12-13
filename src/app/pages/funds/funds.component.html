@@ -1,0 +1,29 @@
+<!-- title -->
+<section>
+  <a class="page-title" routerLink=""><mat-icon>home</mat-icon>
+    <h3>Avalible funds</h3></a>
+</section>
+
+<!-- funds list -->
+<ng-container *ngIf="vm$ | async as vm">
+  <ng-container  *ngIf="funds$ | async as funds">
+    <section class="funds">
+      <fm-fund-add (add)="addFund($event)"></fm-fund-add>
+      <fm-fund-card @fadeIn
+        *ngFor="let fund of funds;
+        trackBy: trackById"
+        [fund]="fund"
+        (remove)="removeFund(fund.id)"
+        (detail)="enterFundDetail(fund.id)">
+      </fm-fund-card>
+    </section>
+  </ng-container>
+
+  <div class="spinner" *ngIf="vm.loading">
+    <mat-spinner></mat-spinner>
+  </div>
+
+  <div *ngIf="vm.error">
+    {{ vm.error }}
+  </div>
+</ng-container>

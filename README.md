@@ -6,10 +6,16 @@
   - Fund add
 - Fund details
   - Dashboard
-  - Wallet
-  - Flow
-  - Status
+    - Rentability
+    - Movements
+    - Register Data
+    - Net Equity
+    - Exchange Hedge
+  - Wallet*
+  - Flow*
+  - Status*
 
+    * Not done yet
 # App Archteture
 
 - Every features lives in it's own module that is lazy loaded
@@ -19,8 +25,10 @@
 
 # Development server
 
-Run `ng serve` for a dev server.
+Run `ng serve` for a dev server and run the command.
 
 Navigate to `http://localhost:4200/`.
 
 The app will automatically reload if you change any of the source files.
+
+

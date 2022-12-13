@@ -1,0 +1,52 @@
+<div class="card__pl">
+
+  <div class="card__pl__title">
+    <h2 class="card__pl__title--text">Net Equity</h2>
+    <button mat-mini-fab disabled aria-label="Action button disabled">
+      <mat-icon class="card__pl__title--icon">donut_large</mat-icon>
+    </button>
+  </div>
+
+  <mat-divider></mat-divider>
+
+  <div class="card__pl__body" *ngIf="data; else empty">
+    <div class="card__pl__body--graph">
+      <canvas baseChart
+              [data]="doughnutChartData"
+              [type]="doughnutChartType"
+              [options]="chartOptions">
+      </canvas>
+    </div>
+
+    <span class="card__pl__body--total">Total</span>
+    <span class="card__pl__body--value">{{ nETotal ? '$ ' + (nETotal | number) : '----,--' }}</span>
+
+    <div class="card__pl__body--labels">
+      <div class="card__pl__body--labels--brasil">
+        <div>Domestic</div>
+        <div>{{ domestic ? '$ ' + (domestic | number) : '----,--' }}</div>
+      </div>
+      <div class="card__pl__body--labels--exterior">
+        <div>Internacional</div>
+        <div>{{ international ? '$ ' + (international | number) : '----,--' }}</div>
+      </div>
+    </div>
+  </div>
+
+  <ng-template #empty>
+    <div class="container h-100">
+      <div class="row h-100">
+        <div class="col align-self-start">
+          &nbsp;
+        </div>
+        <div class="col align-self-center">
+          <h2>Movement data is not loading. Contact the support team.</h2>
+        </div>
+        <div class="col align-self-end">
+          &nbsp;
+        </div>
+    </div>
+    </div>
+  </ng-template>
+
+</div>
