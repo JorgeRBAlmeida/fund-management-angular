@@ -13,7 +13,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatCardModule } from '@angular/material/card';
 import { DialogComponent } from './core/utils/dialog/dialog.component';
-
+import { NgChartsModule } from 'ng2-charts';
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,7 +31,9 @@ import { DialogComponent } from './core/utils/dialog/dialog.component';
     MatDialogModule,
     MatIconModule,
     MatButtonModule,
-    MatCardModule
+    MatCardModule,
+    // OTHERS
+    NgChartsModule.forRoot()
   ],
   providers: [
     {

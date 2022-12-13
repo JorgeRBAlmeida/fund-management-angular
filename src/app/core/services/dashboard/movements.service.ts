@@ -18,7 +18,7 @@ const mov$: Observable<Movements> = of({
   providedIn: 'root'
 })
 export class MovementsService {
-  getMovimentacoes() : Observable<Movements> {
+  getMovs() : Observable<Movements> {
     return (mov$);
   }
 }

@@ -1,1 +1,33 @@
-<p>movements-card works!</p>
+<div class="card__mov">
+  <div class="card__mov__title">
+    <h2 class="card__mov__title--text">Movements</h2>
+    <button mat-mini-fab disabled aria-label="Action button disabled">
+      <mat-icon class="card__rent__title--icon">currency_exchange</mat-icon>
+    </button>
+  </div>
+  <mat-divider></mat-divider>
+  <div class="mx-auto" *ngIf="movApply && movBailout; else empty">
+    <div class="card__mov__table">
+      <div>Aplicação:</div>
+      <div class="data">D+{{ movApply.first }} / D+{{ movApply.second }}</div>
+      <div>Resgate:</div>
+      <div class="data">D+{{ movBailout.first }} / D+{{ movBailout.second }}</div>
+    </div>
+  </div>
+
+  <ng-template #empty>
+    <div class="container h-100">
+      <div class="row h-100">
+        <div class="col align-self-start">
+          &nbsp;
+        </div>
+        <div class="col align-self-center">
+          <h2>Movement data is not loading. Contact the support team.</h2>
+        </div>
+        <div class="col align-self-end">
+          &nbsp;
+        </div>
+    </div>
+    </div>
+  </ng-template>
+</div>

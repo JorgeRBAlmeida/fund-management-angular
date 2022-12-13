@@ -1,1 +1,43 @@
-<p>register-data-card works!</p>
+<div class="card__reg-data">
+  <div class="card__reg-data__title">
+    <h2 class="card__reg-data__title--text">Register Data</h2>
+    <button mat-mini-fab disabled aria-label="Action button disabled">
+      <mat-icon class="card__rent__title--icon">format_list_bulleted</mat-icon>
+    </button>
+  </div>
+  <mat-divider></mat-divider>
+  <div class="card__reg-data__table" *ngIf="data; else empty">
+    <div>Benchmark:</div>
+    <strong class="data">{{ data.benchmark ? (data.benchmark + '% CDI') : '(empty)' }}</strong>
+    <div>Cód. Drive:</div>
+    <strong class="data">{{ data.id ? data.id : '(empty)' }}</strong>
+    <div>Cód. GFI:</div>
+    <strong class="data">{{ data.codGfi ? data.codGfi : '(empty)' }}</strong>
+    <div>Cnt. Corrente:</div>
+    <strong class="data">{{ data.countCorrente ?( data.countCorrente | number) : '(empty)' }}</strong>
+    <div>Cnt. BB SEC:</div>
+    <strong class="data">{{ data.countSec ? ('ATB ' + data.countSec) : '(empty)' }}</strong>
+    <div>Cnt. SELIC:</div>
+    <strong class="data">{{ data.countSelic ? data.countSelic : '(empty)' }}</strong>
+    <div>Cnt. CETIP:</div>
+    <strong class="data">{{ data.countCetip ? data.countCetip : '(empty)' }}</strong>
+    <div>Cnt. Allfunds:</div>
+    <strong class="data">{{ data.countAllFunds ? data.countAllFunds : '(empty)' }}</strong>
+  </div>
+
+  <ng-template #empty>
+    <div class="container h-100">
+      <div class="row h-100">
+        <div class="col align-self-start">
+          &nbsp;
+        </div>
+        <div class="col align-self-center">
+          <h2>Movement data is not loading. Contact the support team.</h2>
+        </div>
+        <div class="col align-self-end">
+          &nbsp;
+        </div>
+    </div>
+    </div>
+  </ng-template>
+</div>

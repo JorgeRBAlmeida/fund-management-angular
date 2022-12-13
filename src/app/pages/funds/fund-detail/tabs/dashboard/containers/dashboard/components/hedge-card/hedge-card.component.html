@@ -1,1 +1,56 @@
-<p>hedge-card works!</p>
+<div class="card__hedge">
+  <div class="card__hedge__title">
+    <h2 class="card__hedge__title--text">Hedge</h2>
+    <button mat-mini-fab disabled aria-label="Action button disabled">
+      <mat-icon class="card__hedge__title--icon">account_balance</mat-icon>
+    </button>
+  </div>
+  <mat-divider></mat-divider>
+  <div class="card__hedge__body">
+    <div class="card__hedge__body--data">
+      <form class="card__hedge__body--data--labels" [formGroup]="form">
+        <div class="need__input">
+          <mat-form-field class="input">
+            <mat-label>Target:</mat-label>
+            <input matInput type="number" formControlName="targetControl">
+            <span matTextSuffix>%</span>
+          </mat-form-field>
+        </div>
+        <div class="need__input">
+          <mat-form-field class="input">
+            <mat-label>Current:</mat-label>
+            <input matInput type="number" [value]="form.get('currentControl')?.value" disabled>
+            <span matTextSuffix>%</span>
+          </mat-form-field>
+        </div>
+        <div class="need__input">
+          <mat-form-field class="input">
+            <mat-label>Limit:</mat-label>
+            <input matInput type="number" formControlName="limitControl" min="1">
+            <span matTextSuffix>%</span>
+          </mat-form-field>
+        </div>
+      </form>
+      <div class="card__hedge__body--data--graph">
+        <canvas baseChart
+                [data]="barChartData"
+                [options]="barChartOptions"
+                [type]="barChartType">
+        </canvas>
+      </div>
+      <hr>
+    </div>
+
+    <form class="card__hedge__body--send">
+      <div class="need__input">
+        <mat-form-field class="input">
+          <mat-label>Required:</mat-label>
+          <input matInput type="number" value="-15">
+          <span matTextSuffix>position</span>
+        </mat-form-field>
+      </div>
+    </form>
+
+  </div>
+</div>
+

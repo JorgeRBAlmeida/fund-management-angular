@@ -44,3 +44,5 @@ Thumbs.db
 
 db.json
 routes.json
+
+*.spec.ts

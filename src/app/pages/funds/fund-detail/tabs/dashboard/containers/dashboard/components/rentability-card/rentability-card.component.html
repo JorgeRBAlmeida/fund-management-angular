@@ -1,7 +1,9 @@
 <div class="card__rent">
   <div class="card__rent__title">
     <h2 class="card__rent__title--text">Rentability</h2>
-    <mat-icon class="card__rent__title--icon">ssid_chart</mat-icon>
+    <button mat-mini-fab disabled aria-label="Action button disabled">
+      <mat-icon class="card__rent__title--icon">query_stats</mat-icon>
+    </button>
   </div>
   <mat-divider></mat-divider>
   <div class="card__rent__table" *ngIf="rentabilityFund && rentabilityBench; else empty">
