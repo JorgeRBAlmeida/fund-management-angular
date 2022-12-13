@@ -11,10 +11,11 @@
     - Register Data
     - Net Equity
     - Exchange Hedge
-  - Wallet
-  - Flow
-  - Status
+  - Wallet*
+  - Flow*
+  - Status*
 
+    * Not done yet
 # App Archteture
 
 - Every features lives in it's own module that is lazy loaded
